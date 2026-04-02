@@ -1,5 +1,6 @@
 # Project meta files
 CLAUDE.md
+.claude
 
 # Excluded demo folders
 demo-family-beat/
