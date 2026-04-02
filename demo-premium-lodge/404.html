@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Side ikke funnet — Orkla Laksegård</title>
+
+  <!-- Favicon: gold fish hook -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='7' r='3.5' fill='none' stroke='%23c9a84c' stroke-width='2.2'/%3E%3Cpath d='M16 10.5 C16 10.5 16 20 22 24 C27 27.5 27 32 22 32' fill='none' stroke='%23c9a84c' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M19.5 29.5 L24 33 L19.5 33' fill='%23c9a84c'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .not-found {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--color-bg);
+    }
+
+    .not-found__code {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--color-gold);
+      opacity: 0.25;
+      letter-spacing: 0.05em;
+    }
+
+    .not-found__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 400;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .not-found__text {
+      color: var(--color-text-muted);
+      font-size: 1rem;
+      max-width: 380px;
+      margin-bottom: 2.5rem;
+    }
+
+    .not-found__link {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .not-found__link:hover {
+      background-color: var(--color-gold);
+      color: var(--color-bg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === 404 PAGE === -->
+  <main class="not-found">
+    <p class="not-found__code">404</p>
+    <h1 class="not-found__title">Side ikke funnet</h1>
+    <p class="not-found__text">Siden du leter etter finnes ikke — kanskje laksen tok den med seg.</p>
+    <a href="index.html" class="not-found__link">Tilbake til forsiden</a>
+  </main>
+
+</body>
+</html>
