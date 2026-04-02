@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book opphold — Orkla Laksegård</title>
+  <meta name="description" content="Book ditt laksefiskeopphold på Orkla Laksegård. Velg beat, datoer og antall stenger." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='7' r='3.5' fill='none' stroke='%23c9a84c' stroke-width='2.2'/%3E%3Cpath d='M16 10.5 C16 10.5 16 20 22 24 C27 27.5 27 32 22 32' fill='none' stroke='%23c9a84c' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M19.5 29.5 L24 33 L19.5 33' fill='%23c9a84c'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- === NAVIGATION === -->
+  <nav class="nav scrolled" role="navigation" aria-label="Hovednavigasjon">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" data-i18n="nav.logo">Orkla Laksegård</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="about.html" data-i18n="nav.about">Om oss</a></li>
+        <li><a href="index.html#beats" data-i18n="nav.beats">Beats</a></li>
+        <li><a href="booking.html" class="active" data-i18n="nav.booking">Booking</a></li>
+        <li><a href="index.html#gallery" data-i18n="nav.gallery">Galleri</a></li>
+        <li><a href="index.html#contact" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Åpne meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobilnavigasjon">
+    <a href="about.html" data-i18n="nav.about">Om oss</a>
+    <a href="index.html#beats" data-i18n="nav.beats">Beats</a>
+    <a href="booking.html" data-i18n="nav.booking">Booking</a>
+    <a href="index.html#gallery" data-i18n="nav.gallery">Galleri</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
+    <button class="lang-toggle mobile-lang" id="lang-toggle-mobile" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
+  </nav>
+
+
+  <!-- === PAGE HERO === -->
+  <header class="page-hero">
+    <span class="section-badge" data-i18n="booking.page.badge">Reservasjon</span>
+    <h1 data-i18n="booking.page.heading">Book ditt opphold</h1>
+    <p data-i18n="booking.page.sub">Fyll inn ønsket beat, datoer og antall stenger — prisen beregnes i sanntid.</p>
+  </header>
+
+
+  <main>
+    <!-- === BOOKING SECTION === -->
+    <section id="booking" class="booking-page" aria-label="Booking">
+      <div class="booking-page-inner">
+
+        <div class="booking-panel fade-in">
+
+          <!-- Form side -->
+          <div class="booking-form-side">
+
+            <div class="booking-form-group">
+              <label for="booking-beat" data-i18n="booking.beat.label">Velg beat</label>
+              <div class="booking-select-wrap">
+                <select id="booking-beat" class="booking-select" aria-label="Velg beat">
+                  <option value="" data-i18n="booking.select.beat">Velg beat...</option>
+                  <option value="ovre-elv" data-i18n="beat1.name">Øvre Elv</option>
+                  <option value="midtre-stryk" data-i18n="beat2.name">Midtre Stryk</option>
+                  <option value="nedre-poll" data-i18n="beat3.name">Nedre Poll</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="date-row">
+              <div class="booking-form-group">
+                <label for="booking-arrival" data-i18n="booking.arrival.label">Ankomst</label>
+                <input type="date" id="booking-arrival" class="booking-date" aria-label="Ankomstdato" />
+              </div>
+              <div class="booking-form-group">
+                <label for="booking-departure" data-i18n="booking.departure.label">Avreise</label>
+                <input type="date" id="booking-departure" class="booking-date" aria-label="Avreisedato" />
+              </div>
+            </div>
+
+            <div class="booking-form-group">
+              <label data-i18n="booking.rods.label">Antall stenger</label>
+              <div class="stepper" role="group" aria-label="Antall stenger">
+                <button class="stepper-btn" id="rods-minus" aria-label="Færre stenger" disabled>−</button>
+                <span class="stepper-value" id="rods-value" aria-live="polite">1</span>
+                <button class="stepper-btn" id="rods-plus" aria-label="Flere stenger">+</button>
+              </div>
+            </div>
+
+            <!-- Seasonal pricing reference -->
+            <div class="price-ref">
+              <p class="price-ref-title" data-i18n="priceref.title">Sesongpriser per stang per dag</p>
+              <div class="price-ref-list">
+                <div class="price-ref-row">
+                  <span class="price-ref-date" data-i18n="priceref.date.early">15. mai – 31. mai</span>
+                  <span class="price-ref-amount">750 kr <span class="price-ref-badge price-ref-badge--early" data-i18n="priceref.label.early">Tidligsesong</span></span>
+                </div>
+                <div class="price-ref-row">
+                  <span class="price-ref-date" data-i18n="priceref.date.peak">1. jun – 15. jul</span>
+                  <span class="price-ref-amount">950 kr <span class="price-ref-badge price-ref-badge--peak" data-i18n="priceref.label.peak">Høysesong</span></span>
+                </div>
+                <div class="price-ref-row">
+                  <span class="price-ref-date" data-i18n="priceref.date.mid">16. jul – 31. aug</span>
+                  <span class="price-ref-amount">850 kr</span>
+                </div>
+                <div class="price-ref-row">
+                  <span class="price-ref-date" data-i18n="priceref.date.late">1. sep – 15. sep</span>
+                  <span class="price-ref-amount">650 kr <span class="price-ref-badge price-ref-badge--late" data-i18n="priceref.label.late">Sluttsesong</span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Summary side -->
+          <div class="booking-summary-side">
+
+            <div id="booking-placeholder" class="booking-summary-placeholder">
+              <div class="placeholder-icon" aria-hidden="true">🎣</div>
+              <p data-i18n="booking.norate">Velg beat og datoer for å se pris</p>
+            </div>
+
+            <div id="booking-results" class="booking-results" aria-live="polite">
+
+              <p class="result-dates" id="result-dates"></p>
+
+              <div id="season-badges" style="display:flex;gap:0.5rem;flex-wrap:wrap;"></div>
+
+              <div class="breakdown-section">
+                <div id="price-breakdown"></div>
+              </div>
+
+              <div class="total-section">
+                <div class="total-row main-total">
+                  <span class="total-label" id="result-total-label" data-i18n="booking.subtotal">Totalt</span>
+                  <span class="total-value" id="result-total">—</span>
+                </div>
+                <div class="total-row">
+                  <span class="total-label" id="result-deposit-label" data-i18n="booking.deposit">Depositum i dag (30 %)</span>
+                  <span class="deposit-value" id="result-deposit">—</span>
+                </div>
+                <div class="total-row">
+                  <span class="total-label" id="result-remaining-label" data-i18n="booking.remaining">Restbetaling ved ankomst</span>
+                  <span class="sub-total-value" id="result-remaining">—</span>
+                </div>
+              </div>
+
+              <button class="vipps-btn" id="vipps-btn" aria-label="Betal med Vipps">
+                <span class="vipps-v" aria-hidden="true">V</span>
+                <span data-i18n="booking.vipps">Betal med Vipps</span>
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- === FOOTER === -->
+  <footer class="footer" role="contentinfo">
+    <p class="footer-copyright" data-i18n="footer.copyright">© 2026 Orkla Laksegård. Alle rettigheter reservert.</p>
+    <p class="footer-dev">
+      <span data-i18n="footer.dev">Utviklet av</span> <a href="#" rel="noopener">Bithun</a>
+    </p>
+  </footer>
+
+
+  <!-- === VIPPS MODAL === -->
+  <div id="vipps-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-vipps-logo" aria-hidden="true">V</div>
+      <h2 class="modal-title" id="modal-title" data-i18n="modal.title">Vipps-betaling</h2>
+      <p class="modal-text" data-i18n="modal.text">Dette er en demo — Vipps-betaling aktiveres når din konto er satt opp.</p>
+      <p class="modal-sub" data-i18n="modal.sub">Du vil motta en bekreftelse på e-post innen 24 timer.</p>
+      <button class="modal-close" id="modal-close" data-i18n="modal.close">Lukk</button>
+    </div>
+  </div>
+
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll til toppen" title="Scroll til toppen">↑</button>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

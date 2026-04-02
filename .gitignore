@@ -1,0 +1,12 @@
+# Excluded demo folders
+demo-family-beat/
+
+# Screenshots
+screenshot/
+
+# Build artifacts
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db

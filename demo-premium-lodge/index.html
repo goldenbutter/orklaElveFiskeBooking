@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orkla Laksegård — Eksklusivt laksefiske i Orkla</title>
+  <meta name="description" content="Eksklusivt laksefiske på Orklaelvens fineste beats nær Fannrem. Book direkte hos Orkla Laksegård." />
+
+  <!-- Favicon: gold fish hook -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='7' r='3.5' fill='none' stroke='%23c9a84c' stroke-width='2.2'/%3E%3Cpath d='M16 10.5 C16 10.5 16 20 22 24 C27 27.5 27 32 22 32' fill='none' stroke='%23c9a84c' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M19.5 29.5 L24 33 L19.5 33' fill='%23c9a84c'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- === NAVIGATION === -->
+  <nav class="nav" role="navigation" aria-label="Hovednavigasjon">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" data-i18n="nav.logo">Orkla Laksegård</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="about.html" data-i18n="nav.about">Om oss</a></li>
+        <li><a href="#beats" data-section="beats" data-i18n="nav.beats">Beats</a></li>
+        <li><a href="booking.html" data-i18n="nav.booking">Booking</a></li>
+        <li><a href="#gallery" data-section="gallery" data-i18n="nav.gallery">Galleri</a></li>
+        <li><a href="#contact" data-section="contact" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Åpne meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobilnavigasjon">
+    <a href="about.html" data-i18n="nav.about">Om oss</a>
+    <a href="#beats" data-section="beats" data-i18n="nav.beats">Beats</a>
+    <a href="booking.html" data-i18n="nav.booking">Booking</a>
+    <a href="#gallery" data-section="gallery" data-i18n="nav.gallery">Galleri</a>
+    <a href="#contact" data-section="contact" data-i18n="nav.contact">Kontakt</a>
+    <button class="lang-toggle mobile-lang" id="lang-toggle-mobile" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
+  </nav>
+
+
+  <!-- === HERO SECTION === -->
+  <section id="hero" class="hero" aria-label="Introduksjon">
+    <img
+      class="hero-bg"
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80"
+      data-i18n-alt="gallery.img2.alt"
+      alt="Morgentåke over norsk elvedal"
+      fetchpriority="high"
+    />
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 data-i18n="hero.headline">Fang din drøm på Orkla</h1>
+      <p data-i18n="hero.sub">Opplev eksklusivt laksefiske på Orklaelvens fineste beats, omgitt av uberørt norsk natur. Orkla Laksegård tilbyr et unikt fiskeopphold for den kresne sportsfiskeren.</p>
+      <a href="#booking" class="btn-primary" data-i18n="hero.cta">Book ditt opphold</a>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- === ABOUT SECTION === -->
+    <section id="about" class="about" aria-label="Om oss">
+      <div class="about-inner">
+        <div class="about-text fade-in">
+          <span class="section-badge" data-i18n="about.badge">Om oss</span>
+          <h2 data-i18n="about.heading">En arv av fisketradisjon</h2>
+          <div class="divider-line"></div>
+          <p data-i18n="about.p1">Orkla Laksegård har vært en familiedrevet laksegård siden 1947, da grunnlegger Olav Hagen kjøpte de første fiskerettighetene til Orklaelvens midtre strekninger. Gjennom generasjoner har vi forvaltet disse vannene med dyp respekt for naturen og fiskebestandene.</p>
+          <p data-i18n="about.p2">I dag driver vi tre av Orklas mest ettertraktede beats, med til sammen over 2,6 kilometer med strie stryk, rolige kulper og dramatiske fossestryk. Hvert beat er nøye utvalgt for sin unike karakter og høye fiskekvalitet.</p>
+          <p data-i18n="about.p3">Vi tilbyr et begrenset antall dagskort og ukeopphold for å sikre en eksklusiv og uforstyrret fiskeopplevelse. Maksimalt 9 stenger til enhver tid på tvers av alle beats — fordi kvalitet alltid trumfer kvantitet.</p>
+          <p data-i18n="about.p4">Fasiliteter inkluderer privat tilgang til alle beats, båtstø, røykeri for fangsten, og full innkvartering i vårt gjesterom og anneks. Et skikkelig norsk lakseeventyr, fra første kast til siste middag.</p>
+          <a href="about.html" class="btn-ghost" data-i18n="about.link">Les mer om oss</a>
+        </div>
+
+        <div class="about-image-wrap fade-in fade-in-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&h=1067&q=80"
+            data-i18n-alt="about.img.alt"
+            alt="Tradisjonelt tømmerhus ved Orklaelven"
+          />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- === BEATS SECTION === -->
+    <section id="beats" class="beats" aria-label="Våre beats">
+      <div class="beats-inner">
+        <div class="section-header fade-in">
+          <span class="section-badge" data-i18n="beats.badge">Våre beats</span>
+          <h2 data-i18n="beats.heading">Velg ditt perfekte beat</h2>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="beats-grid">
+
+          <!-- Beat 1: Øvre Elv -->
+          <article class="beat-card fade-in" aria-label="Beat: Øvre Elv">
+            <div class="beat-card-header">
+              <h3 class="beat-name" data-i18n="beat1.name">Øvre Elv</h3>
+            </div>
+            <p class="beat-desc" data-i18n="beat1.desc">Bred og rolig elv med dype kulper, ideell for erfarne flugefiskere. Kjent for store hunnlaks på sensommeren.</p>
+            <ul class="beat-meta" aria-label="Beat-detaljer">
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.length">Lengde</span>
+                <span class="beat-meta-value" data-i18n="beat1.length">800 m</span>
+              </li>
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.maxrods">Maks stenger</span>
+                <span class="beat-meta-value" data-i18n="beat1.rods">3 stenger</span>
+              </li>
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.difficulty">Vanskelighetsgrad</span>
+                <span class="beat-meta-value" data-i18n="beat1.difficulty">Middels</span>
+              </li>
+            </ul>
+            <div class="beat-price">
+              <span class="beat-price-amount">950</span>
+              <span class="beat-price-unit" data-i18n="beats.perrod">kr/stang/dag</span>
+            </div>
+            <a href="#booking" class="btn-beat" data-beat="ovre-elv" data-i18n="beats.book">Book dette beat</a>
+          </article>
+
+          <!-- Beat 2: Midtre Stryk -->
+          <article class="beat-card fade-in fade-in-delay-1" aria-label="Beat: Midtre Stryk">
+            <div class="beat-card-header">
+              <h3 class="beat-name" data-i18n="beat2.name">Midtre Stryk</h3>
+            </div>
+            <p class="beat-desc" data-i18n="beat2.desc">Teknisk krevende stryk med rask strøm og ujevn bunn. For den erfarne sportsfiskeren som søker utfordringen.</p>
+            <ul class="beat-meta" aria-label="Beat-detaljer">
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.length">Lengde</span>
+                <span class="beat-meta-value" data-i18n="beat2.length">600 m</span>
+              </li>
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.maxrods">Maks stenger</span>
+                <span class="beat-meta-value" data-i18n="beat2.rods">2 stenger</span>
+              </li>
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.difficulty">Vanskelighetsgrad</span>
+                <span class="beat-meta-value" data-i18n="beat2.difficulty">Krevende</span>
+              </li>
+            </ul>
+            <div class="beat-price">
+              <span class="beat-price-amount">950</span>
+              <span class="beat-price-unit" data-i18n="beats.perrod">kr/stang/dag</span>
+            </div>
+            <a href="#booking" class="btn-beat" data-beat="midtre-stryk" data-i18n="beats.book">Book dette beat</a>
+          </article>
+
+          <!-- Beat 3: Nedre Poll -->
+          <article class="beat-card fade-in fade-in-delay-2" aria-label="Beat: Nedre Poll">
+            <div class="beat-card-header">
+              <h3 class="beat-name" data-i18n="beat3.name">Nedre Poll</h3>
+            </div>
+            <p class="beat-desc" data-i18n="beat3.desc">Langt og rolig strekk med slake kulper — perfekt for nybegynnere og familier. Ofte rikelig med fisk.</p>
+            <ul class="beat-meta" aria-label="Beat-detaljer">
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.length">Lengde</span>
+                <span class="beat-meta-value" data-i18n="beat3.length">1 200 m</span>
+              </li>
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.maxrods">Maks stenger</span>
+                <span class="beat-meta-value" data-i18n="beat3.rods">4 stenger</span>
+              </li>
+              <li>
+                <span class="beat-meta-label" data-i18n="beats.difficulty">Vanskelighetsgrad</span>
+                <span class="beat-meta-value" data-i18n="beat3.difficulty">Lett</span>
+              </li>
+            </ul>
+            <div class="beat-price">
+              <span class="beat-price-amount">950</span>
+              <span class="beat-price-unit" data-i18n="beats.perrod">kr/stang/dag</span>
+            </div>
+            <a href="#booking" class="btn-beat" data-beat="nedre-poll" data-i18n="beats.book">Book dette beat</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- === BOOKING SECTION === -->
+    <section id="booking" class="booking" aria-label="Booking">
+      <div class="booking-inner">
+        <div class="section-header fade-in">
+          <span class="section-badge" data-i18n="booking.badge">Reservasjon</span>
+          <h2 data-i18n="booking.heading">Book ditt opphold</h2>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="booking-panel fade-in">
+
+          <!-- Form side -->
+          <div class="booking-form-side">
+
+            <div class="booking-form-group">
+              <label for="booking-beat" data-i18n="booking.beat.label">Velg beat</label>
+              <div class="booking-select-wrap">
+                <select id="booking-beat" class="booking-select" aria-label="Velg beat">
+                  <option value="" data-i18n="booking.select.beat">Velg beat...</option>
+                  <option value="ovre-elv" data-i18n="beat1.name">Øvre Elv</option>
+                  <option value="midtre-stryk" data-i18n="beat2.name">Midtre Stryk</option>
+                  <option value="nedre-poll" data-i18n="beat3.name">Nedre Poll</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="date-row">
+              <div class="booking-form-group">
+                <label for="booking-arrival" data-i18n="booking.arrival.label">Ankomst</label>
+                <input type="date" id="booking-arrival" class="booking-date" aria-label="Ankomstdato" />
+              </div>
+              <div class="booking-form-group">
+                <label for="booking-departure" data-i18n="booking.departure.label">Avreise</label>
+                <input type="date" id="booking-departure" class="booking-date" aria-label="Avreisedato" />
+              </div>
+            </div>
+
+            <div class="booking-form-group">
+              <label data-i18n="booking.rods.label">Antall stenger</label>
+              <div class="stepper" role="group" aria-label="Antall stenger">
+                <button class="stepper-btn" id="rods-minus" aria-label="Færre stenger" disabled>−</button>
+                <span class="stepper-value" id="rods-value" aria-live="polite">1</span>
+                <button class="stepper-btn" id="rods-plus" aria-label="Flere stenger">+</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Summary side -->
+          <div class="booking-summary-side">
+
+            <div id="booking-placeholder" class="booking-summary-placeholder">
+              <div class="placeholder-icon" aria-hidden="true">🎣</div>
+              <p data-i18n="booking.norate">Velg beat og datoer for å se pris</p>
+            </div>
+
+            <div id="booking-results" class="booking-results" aria-live="polite">
+
+              <p class="result-dates" id="result-dates"></p>
+
+              <div id="season-badges" style="display:flex;gap:0.5rem;flex-wrap:wrap;"></div>
+
+              <div class="breakdown-section">
+                <div id="price-breakdown"></div>
+              </div>
+
+              <div class="total-section">
+                <div class="total-row main-total">
+                  <span class="total-label" id="result-total-label" data-i18n="booking.subtotal">Totalt</span>
+                  <span class="total-value" id="result-total">—</span>
+                </div>
+                <div class="total-row">
+                  <span class="total-label" id="result-deposit-label" data-i18n="booking.deposit">Depositum i dag (30 %)</span>
+                  <span class="deposit-value" id="result-deposit">—</span>
+                </div>
+                <div class="total-row">
+                  <span class="total-label" id="result-remaining-label" data-i18n="booking.remaining">Restbetaling ved ankomst</span>
+                  <span class="sub-total-value" id="result-remaining">—</span>
+                </div>
+              </div>
+
+              <button class="vipps-btn" id="vipps-btn" aria-label="Betal med Vipps">
+                <span class="vipps-v" aria-hidden="true">V</span>
+                <span data-i18n="booking.vipps">Betal med Vipps</span>
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- === GALLERY SECTION === -->
+    <section id="gallery" class="gallery" aria-label="Bildegalleri">
+      <div class="gallery-inner">
+        <div class="section-header fade-in">
+          <span class="section-badge" data-i18n="gallery.badge">Galleri</span>
+          <h2 data-i18n="gallery.heading">Orkla gjennom linsen</h2>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="gallery-grid" role="list">
+
+          <div class="gallery-item fade-in" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&h=800&q=80"
+              data-i18n-alt="gallery.img1.alt"
+              alt="Fluefisker i stri elv med tåke i bakgrunnen"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item fade-in fade-in-delay-1" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&h=600&q=80"
+              data-i18n-alt="gallery.img2.alt"
+              alt="Morgentåke over Orklaelven"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item fade-in fade-in-delay-2" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&h=800&q=80"
+              data-i18n-alt="gallery.img3.alt"
+              alt="Stor atlanterhavslaks fanget i kulpen"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item fade-in" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&h=600&q=80"
+              data-i18n-alt="gallery.img4.alt"
+              alt="Flugefiske ved fossestryk"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item fade-in fade-in-delay-1" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&h=600&q=80"
+              data-i18n-alt="gallery.img5.alt"
+              alt="Solnedgang over norsk elvedal"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item fade-in fade-in-delay-2" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=600&h=900&q=80"
+              data-i18n-alt="gallery.img6.alt"
+              alt="Elvehytte ved elvebredden i skumringen"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item fade-in" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1534481016308-0fca71578ae5?auto=format&fit=crop&w=800&h=533&q=80"
+              data-i18n-alt="gallery.img7.alt"
+              alt="Nærbilde av fluekrok og innsnurret line"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item fade-in fade-in-delay-1" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&h=600&q=80"
+              data-i18n-alt="gallery.img8.alt"
+              alt="Norsk fjell- og elvedal i høstfarger"
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- === TESTIMONIALS SECTION === -->
+    <section id="testimonials" class="testimonials" aria-label="Gjesteomtaler">
+      <div class="testimonials-inner">
+        <div class="section-header fade-in">
+          <span class="section-badge" data-i18n="testimonials.badge">Gjestenes ord</span>
+          <h2 data-i18n="testimonials.heading">Hva våre gjester sier</h2>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card fade-in">
+            <div class="stars" aria-label="5 av 5 stjerner" role="img">
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+            </div>
+            <p class="testimonial-quote" data-i18n="testimonial1.quote">"Jeg har fisket laks i over 30 år, men Orkla Laksegård er noe helt for seg selv. Servicen er upåklagelig, beatene er i perfekt stand, og laksen var der. Vil absolutt komme tilbake."</p>
+            <div class="testimonial-author">
+              <p class="testimonial-name" data-i18n="testimonial1.name">Erik Thorvaldsen</p>
+              <p class="testimonial-location" data-i18n="testimonial1.location">Bergen</p>
+            </div>
+          </article>
+
+          <article class="testimonial-card fade-in fade-in-delay-1">
+            <div class="stars" aria-label="5 av 5 stjerner" role="img">
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+            </div>
+            <p class="testimonial-quote" data-i18n="testimonial2.quote">"Et magisk sted. Vi tok fire laks på tre dager på Nedre Poll — nybegynnervennlig og fantastisk natur rundt seg hele veien. Guiden ga oss råd som virkelig utgjorde forskjellen."</p>
+            <div class="testimonial-author">
+              <p class="testimonial-name" data-i18n="testimonial2.name">Marit Olsen</p>
+              <p class="testimonial-location" data-i18n="testimonial2.location">Trondheim</p>
+            </div>
+          </article>
+
+          <article class="testimonial-card fade-in fade-in-delay-2">
+            <div class="stars" aria-label="5 av 5 stjerner" role="img">
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+              <div class="star" aria-hidden="true"></div>
+            </div>
+            <p class="testimonial-quote" data-i18n="testimonial3.quote">"Midtre Stryk er det mest teknisk krevende beatfisket jeg har gjort i Norden. Utfordrende, men utrolig givende. Innkvarteringen var eksklusiv og maten hjemmelaget. Ti poeng."</p>
+            <div class="testimonial-author">
+              <p class="testimonial-name" data-i18n="testimonial3.name">Hans-Erik Paulsen</p>
+              <p class="testimonial-location" data-i18n="testimonial3.location">Oslo</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- === CONTACT SECTION === -->
+    <section id="contact" class="contact" aria-label="Kontakt">
+      <div class="contact-inner">
+        <div class="fade-in">
+          <span class="section-badge" data-i18n="contact.badge">Finn oss</span>
+          <h2 data-i18n="contact.heading">Kontakt og beliggenhet</h2>
+          <div class="divider-line" style="margin-bottom:2rem;"></div>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-item-label">Adresse</span>
+              <span class="contact-item-value" data-i18n="contact.address">Orklaelven, Fannrem
+Orkland, Trøndelag</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">Telefon</span>
+              <span class="contact-item-value">
+                <a href="tel:+4748265100" data-i18n="contact.phone">+47 482 65 100</a>
+              </span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">E-post</span>
+              <span class="contact-item-value">
+                <a href="mailto:post@orklalaksegard.no" data-i18n="contact.email">post@orklalaksegard.no</a>
+              </span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">Sesong</span>
+              <span class="contact-item-value" data-i18n="contact.season">Sesong: 15. mai – 15. september</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-map-placeholder fade-in fade-in-delay-1" aria-label="Kartplassholder">
+          <div class="map-icon" aria-hidden="true">📍</div>
+          <p data-i18n="contact.map">Kart lastes ved bestilling</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- === FOOTER === -->
+  <footer class="footer" role="contentinfo">
+    <p class="footer-copyright" data-i18n="footer.copyright">© 2026 Orkla Laksegård. Alle rettigheter reservert.</p>
+    <p class="footer-dev">
+      <span data-i18n="footer.dev">Utviklet av</span> <a href="#" rel="noopener">Bithun</a>
+    </p>
+  </footer>
+
+
+  <!-- === VIPPS MODAL === -->
+  <div id="vipps-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-vipps-logo" aria-hidden="true">V</div>
+      <h2 class="modal-title" id="modal-title" data-i18n="modal.title">Vipps-betaling</h2>
+      <p class="modal-text" data-i18n="modal.text">Dette er en demo — Vipps-betaling aktiveres når din konto er satt opp.</p>
+      <p class="modal-sub" data-i18n="modal.sub">Du vil motta en bekreftelse på e-post innen 24 timer.</p>
+      <button class="modal-close" id="modal-close" data-i18n="modal.close">Lukk</button>
+    </div>
+  </div>
+
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll til toppen" title="Scroll til toppen">↑</button>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
