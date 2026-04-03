@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elveside Familiefiske — Om oss</title>
+  <meta name="description" content="Familien Haugen har fisket langs Orkla siden 1987. Les historien bak Elveside Familiefiske — tre generasjoner, én lidenskap." />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='13' cy='16' rx='11' ry='7' fill='%235B7F4A'/%3E%3Ccircle cx='6' cy='14' r='1.4' fill='%23FAF7F2'/%3E%3Cpath d='M24 10 L32 6 L32 26 L24 22 Z' fill='%235B7F4A'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- === NAVIGATION === -->
+  <nav class="nav" role="navigation" aria-label="Hovednavigasjon">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="22" height="16" viewBox="0 0 32 24" fill="currentColor" aria-hidden="true">
+          <ellipse cx="13" cy="12" rx="11" ry="7"/>
+          <circle cx="6" cy="10" r="1.6" fill="var(--color-bg)"/>
+          <path d="M24 6 L32 2 L32 22 L24 18 Z"/>
+        </svg>
+        <span data-i18n="nav.logo">Elveside Familiefiske</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"   data-i18n="nav.home">Hjem</a></li>
+        <li><a href="booking.html" data-i18n="nav.booking">Booking</a></li>
+        <li><a href="about.html"   data-i18n="nav.about">Om oss</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Bytt språk">EN</button>
+        <button type="button" class="hamburger" id="hamburger" aria-label="Åpne meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigasjonsmeny">
+    <a href="index.html"   data-i18n="nav.home">Hjem</a>
+    <a href="booking.html" data-i18n="nav.booking">Booking</a>
+    <a href="about.html"   data-i18n="nav.about">Om oss</a>
+    <a href="gallery.html" data-i18n="nav.gallery">Galleri</a>
+    <button type="button" class="lang-toggle" id="mobile-lang-toggle">EN</button>
+  </div>
+
+  <main>
+
+    <!-- === PAGE BANNER === -->
+    <section class="page-banner" aria-label="Topbilde">
+      <div class="page-banner-bg" style="background-image: url('assets/images/river-evening.jpg'); background-position: center 30%;"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content container">
+        <h1 data-i18n="about.banner.title">Om oss</h1>
+        <p data-i18n="about.banner.sub">Tre generasjoner ved Orkla</p>
+      </div>
+    </section>
+
+    <!-- === FAMILY STORY === -->
+    <section class="story-section">
+      <div class="story-inner">
+        <div class="reveal">
+          <span class="section-label">Familien Haugen</span>
+          <h2 data-i18n="story.heading">Familien Haugen og Orkla</h2>
+        </div>
+
+        <div class="story-text reveal">
+          <p data-i18n="story.p1">Elveside Familiefiske har vært i familien Haugen siden 1987, da bestefar Olav kjøpte de første rettighetene langs Orkla. Han drømte om et sted der folk kunne oppleve elva slik han selv hadde gjort som barn — stille morgenene, den første laksen på kroken, kaffekoppen ved bålet.</p>
+          <p data-i18n="story.p2">I dag driver Kari og Ola videre i samme ånd. Med hjelp fra ungene i sommersesongen holder vi det enkelt: god tilgang til elva, rene hytter, og ærlige råd om hvor fisken står.</p>
+          <p data-i18n="story.p3">Vi er ikke den største fiskeopplevelsen langs Orkla. Men vi tror vi er den mest personlige.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- === FAMILY PHOTO GRID === -->
+    <section class="photo-grid-section" aria-label="Bilder fra elva og familien">
+      <div class="photo-grid-inner">
+        <div class="photo-grid reveal">
+
+          <!-- Large image left -->
+          <div class="photo-grid-item large">
+            <img
+              src="assets/images/welcome-fishing.jpg"
+              data-i18n="photo.img1.alt"
+              alt="Person fisker fluefiske i en rolig elvekulp med grønne bredder"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Stacked right: two small images -->
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div class="photo-grid-item small-top">
+              <img
+                src="assets/images/cabin-exterior.jpg"
+                data-i18n="photo.img2.alt"
+                alt="Koselig trehytte omgitt av bjørkeskog ved elvebredden"
+                loading="lazy"
+              />
+            </div>
+            <div class="photo-grid-item small-bottom">
+              <img
+                src="assets/images/rod-autumn.jpg"
+                data-i18n="photo.img3.alt"
+                alt="Nærbilde av fluefiskeustyr og fluer i en åpen eske"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Wide bottom image -->
+          <div class="photo-grid-item wide">
+            <img
+              src="assets/images/river-morning.jpg"
+              data-i18n="photo.img4.alt"
+              alt="Bred elveutsikt mot Orkla i kveldslys med refleksjoner i vannet"
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+
+        <!-- Captions -->
+        <div style="display:flex; gap:1rem; margin-top:0.75rem; flex-wrap:wrap;">
+          <p class="photo-caption" style="flex:3;" data-i18n="photo.caption1">Morgonfiske i Storhølen — elvas beste kulp</p>
+          <p class="photo-caption" style="flex:2; text-align:right;" data-i18n="photo.caption2">Hytte Øst — rett ved elvebredden</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px; background:var(--color-bg);">
+        <path d="M0,8 C480,48 960,0 1440,36 L1440,48 L0,48 Z" fill="var(--color-bg-alt)"/>
+      </svg>
+    </div>
+
+    <!-- === RIVER INFO === -->
+    <section class="river-section">
+      <div class="river-inner">
+
+        <div class="river-image reveal">
+          <img
+            src="assets/images/river-morning.jpg"
+            data-i18n="photo.img4.alt"
+            alt="Bred elveutsikt mot Orkla i kveldslys med refleksjoner i vannet"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="river-text reveal" style="transition-delay:0.15s;">
+          <span class="section-label">Orkla, Trøndelag</span>
+          <h2 data-i18n="river.heading">Vår strekning av Orkla</h2>
+          <p data-i18n="river.p1">Vi forvalter 2 kilometer med variert elvestrekning — fra rolige flate kulper til mer strømmende partier. Hver høl har sin karakter, og vi vet hvilke som gir best fiske til ulike tider på sesongen.</p>
+          <p data-i18n="river.p2">Storhølen og Kabben er de mest kjente stedene langs vår strekning. Storhølen er bred og dyp — perfekt for store hunnlaks fra midten av juni. Kabben er en smalere og mer teknisk høl, elskede av erfarne flugefiskere.</p>
+
+          <div class="river-facts">
+            <div class="river-fact">
+              <span class="river-fact-label" data-i18n="river.fact1.label">Strekning:</span>
+              <span data-i18n="river.fact1.value">Ca. 2 km privat elv</span>
+            </div>
+            <div class="river-fact">
+              <span class="river-fact-label" data-i18n="river.fact2.label">Arter:</span>
+              <span data-i18n="river.fact2.value">Atlanterhavslaks og sjøørret</span>
+            </div>
+            <div class="river-fact">
+              <span class="river-fact-label" data-i18n="river.fact3.label">Sesong:</span>
+              <span data-i18n="river.fact3.value">15. mai – 15. september</span>
+            </div>
+            <div class="river-fact">
+              <span class="river-fact-label" data-i18n="river.fact4.label">Beste laksefiske:</span>
+              <span data-i18n="river.fact4.value">Juni–juli (laks), aug–sep (sjøørret)</span>
+            </div>
+            <div class="river-fact">
+              <span class="river-fact-label" data-i18n="river.fact5.label">Snittfangst:</span>
+              <span data-i18n="river.fact5.value">60–80 laks per sesong</span>
+            </div>
+            <div class="river-fact">
+              <span class="river-fact-label" data-i18n="river.fact6.label">Beste høler:</span>
+              <span data-i18n="river.fact6.value">Storhølen og Kabben</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px; background:var(--color-bg-alt);">
+        <path d="M0,24 C720,0 1080,48 1440,12 L1440,48 L0,48 Z" fill="var(--color-bg)"/>
+      </svg>
+    </div>
+
+    <!-- === VALUES === -->
+    <section class="values-section">
+      <div class="values-inner">
+        <div class="reveal">
+          <span class="section-label">Elveside Familiefiske</span>
+          <h2 data-i18n="values.heading">Hva gjør oss annerledes</h2>
+        </div>
+
+        <div class="values-grid reveal-stagger">
+
+          <div class="value-block reveal">
+            <svg class="value-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 4 C12 4 4 12 4 22 C4 28 7 34 12 38" stroke-linecap="round"/>
+              <path d="M32 38 C37 34 40 28 40 22 C40 12 32 4 22 4" stroke-linecap="round"/>
+              <path d="M14 26 C14 20 18 16 22 16 C26 16 30 20 30 26"/>
+              <circle cx="22" cy="14" r="4" fill="currentColor" opacity="0.15" stroke="currentColor"/>
+              <path d="M8 40 C10 36 16 34 22 34 C28 34 34 36 36 40" stroke-linecap="round"/>
+            </svg>
+            <h3 data-i18n="val1.title">Personlig service</h3>
+            <p data-i18n="val1.text">Dere møter alltid oss, ikke ansatte. Vi er her fordi vi elsker dette — og det merkes.</p>
+          </div>
+
+          <div class="value-block reveal">
+            <svg class="value-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 4 C22 4 8 10 8 22 C8 30 14 38 22 40 C30 38 36 30 36 22 C36 10 22 4 22 4 Z" fill="currentColor" opacity="0.1" stroke="currentColor"/>
+              <path d="M15 22 L20 27 L30 17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+            </svg>
+            <h3 data-i18n="val2.title">Bærekraftig fiske</h3>
+            <p data-i18n="val2.text">Vi praktiserer fang-og-slipp og rapporterer all fangst til myndighetene.</p>
+          </div>
+
+          <div class="value-block reveal">
+            <svg class="value-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="22" cy="22" r="16" fill="currentColor" opacity="0.08" stroke="currentColor"/>
+              <path d="M22 12 L22 14" stroke-linecap="round"/>
+              <path d="M22 30 L22 32" stroke-linecap="round"/>
+              <path d="M17 17 C17 14 27 14 27 19 C27 24 17 24 17 28 C17 32 27 32 27 29" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 data-i18n="val3.title">Rettferdig pris</h3>
+            <p data-i18n="val3.text">Ingen skjulte kostnader. Det du ser er det du betaler.</p>
+          </div>
+
+        </div>
+
+        <!-- CTA to booking -->
+        <div style="margin-top:3rem;" class="reveal">
+          <a href="booking.html" class="btn btn-primary" style="display:inline-flex; width:auto;" data-i18n="hero.cta">Se ledige datoer</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3 data-i18n="nav.logo">Elveside Familiefiske</h3>
+        <p data-i18n="footer.tagline">Familiefiske langs Orkla siden 1987.</p>
+        <address class="footer-address" data-i18n="footer.address">Orklavegen 147, 7320 Fannrem</address>
+      </div>
+
+      <nav class="footer-links" aria-label="Sidelenker">
+        <h4 data-i18n="footer.links">Sider</h4>
+        <ul>
+          <li><a href="index.html"   data-i18n="nav.home">Hjem</a></li>
+          <li><a href="booking.html" data-i18n="nav.booking">Booking</a></li>
+          <li><a href="about.html"   data-i18n="nav.about">Om oss</a></li>
+          <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4 data-i18n="footer.contact">Kontakt</h4>
+        <p><a href="tel:+4772440187" data-i18n="footer.phone">+47 72 44 01 87</a></p>
+        <p><a href="mailto:post@elveisidefamiliefiske.no" data-i18n="footer.email">post@elveisidefamiliefiske.no</a></p>
+        <p class="response-note" data-i18n="footer.response">Vi svarer vanligvis innen 24 timer</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Elveside Familiefiske</span>
+      <a href="#" data-i18n="footer.dev">Utviklet av Bithun</a>
+    </div>
+  </footer>
+
+  <!-- === VIPPS MODAL === -->
+  <div class="modal-backdrop" id="vipps-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-vipps-logo" aria-label="Vipps">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="10" r="10" fill="white" opacity="0.25"/>
+          <text x="10" y="14" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="bold">V</text>
+        </svg>
+        Vipps
+      </div>
+      <h2 id="modal-title" data-i18n="modal.title">Dette er en demo</h2>
+      <p data-i18n="modal.body1">I en ekte versjon ville du fullført betalingen med Vipps her. Alt er klart — dato, pris og bekreftelse på SMS.</p>
+      <p>
+        <span data-i18n="modal.body2">Kontakt oss for å se hvordan dette fungerer for din bedrift:</span>
+        <a href="mailto:post@elvebooking.no" data-i18n="modal.email">post@elvebooking.no</a>
+      </p>
+      <button type="button" class="modal-close-btn" data-i18n="modal.close">Lukk</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

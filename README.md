@@ -23,38 +23,95 @@ These demos are shown to potential clients to demonstrate what a professional bo
 
 ```
 orklaElveFiskeBooking/
-├── demo-premium-lodge/     # Orkla Laksegård — premium lodge aesthetic
-└── (more demos coming)
+├── shared/                  # Shared assets (Vipps modal, favicon)
+├── demo-premium-lodge/      # Demo 1 — Orkla Laksegård (premium lodge)
+└── demo-family-beat/        # Demo 2 — Elveside Familiefiske (family beat)
 ```
+
+---
 
 ## Demos
 
-### demo-premium-lodge — Orkla Laksegård
-Dark, premium aesthetic targeting high-end salmon fishing clients.
+### Demo 1 — Orkla Laksegård (`demo-premium-lodge`)
 
-- 👉 **LIVE website :**  [orklaelvefiskebooking](https://orklaelvefiskebooking.netlify.app)
+Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
+
+- 👉 **Live:** [orklaelvefiskebooking.netlify.app](https://orklaelvefiskebooking.netlify.app)
 - **Pages:** Home, About, Booking
-- **Features:** Season date picker, live price calculator, Vipps demo modal, NO/EN language toggle
+- **Tone:** Luxury, sleek, exclusive
+- **Features:** Beat selector, live price calculator, Vipps demo modal, NO/EN language toggle
 
-<!-- Add demo video here -->
+---
+
+### Demo 2 — Elveside Familiefiske (`demo-family-beat`)
+
+Warm, personal aesthetic targeting small family-owned beat owners.
+
+- 👉 **Live:** `<!-- ADD VERCEL URL HERE -->`
+- **Pages:** Home, Booking, About, Gallery
+- **Tone:** Warm, approachable, personal — "come fish with us"
+- **Features:** Availability calendar, pricing cards, FAQ accordion, lightbox gallery, Vipps demo modal, NO/EN language toggle
+
+#### Pages
+
+| Page | File | Description |
+|---|---|---|
+| Home | `index.html` | Hero, welcome section, offer cards, season strip, testimonial |
+| Booking | `booking.html` | 6 pricing cards, JS availability calendar (May 15–Sep 15), FAQ |
+| About | `about.html` | Family story, photo grid, river info, values |
+| Gallery | `gallery.html` | 12-image masonry grid with lightbox |
+| 404 | `404.html` | Custom friendly error page |
+
+#### Design
+
+| Property | Value |
+|---|---|
+| Fonts | Playfair Display (headings) + Source Sans 3 (body) |
+| Primary colour | `#5B7F4A` (forest green) |
+| Accent colour | `#C17F3E` (warm amber) |
+| Background | `#FAF7F2` (warm off-white) |
+| Max width | 1100px |
+| Breakpoint | 768px (mobile) |
+
+#### Local images (`demo-family-beat/assets/images/`)
+
+| File | Used in |
+|---|---|
+| `fishing-norway.jpg` | Homepage hero, gallery |
+| `welcome-fishing.jpg` | Homepage welcome section, gallery |
+| `village-river.jpg` | Homepage welcome section (desktop), gallery |
+| `cabin-exterior.jpg` | About photo grid, gallery |
+| `river-evening.jpg` | About page banner, gallery |
+| `river-morning.jpg` | About river section, gallery |
+| `rod-autumn.jpg` | About photo grid, gallery |
+| `rod-sunset.jpg` | Gallery |
+| `salmon-on-grass.jpg` | Gallery |
+| `trout-hands.jpg` | Gallery |
+| `river-aerial.jpg` | Gallery banner, gallery |
+| `norwegian-nature.jpg` | Gallery |
 
 ---
 
 ## Development
 
-No build step required. Open any `index.html` directly in a browser or use a local server:
+No build step required. Open any `index.html` directly in a browser, or use a local server:
 
 ```bash
+# Demo 1
 npx serve demo-premium-lodge
+
+# Demo 2
+npx serve demo-family-beat
 ```
 
 ## Deployment
 
-Each demo is deployed as a separate Netlify site from this repo, pointing to its own subfolder as the publish directory.
+Each demo deploys as a separate site pointing to its own subfolder as the publish directory.
 
-| Demo | Publish Directory | Live URL |
-|---|---|---|
-| demo-premium-lodge | `demo-premium-lodge` | [orklaelvefiskebooking](https://orklaelvefiskebooking.netlify.app) |
+| Demo | Folder | Platform | Live URL |
+|---|---|---|---|
+| Orkla Laksegård | `demo-premium-lodge` | Netlify | [orklaelvefiskebooking.netlify.app](https://orklaelvefiskebooking.netlify.app) |
+| Elveside Familiefiske | `demo-family-beat` | Vercel | `<!-- ADD VERCEL URL HERE -->` |
 
 ---
 

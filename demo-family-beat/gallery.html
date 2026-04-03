@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elveside Familiefiske — Galleri</title>
+  <meta name="description" content="Bilder fra elva og sesongen ved Elveside Familiefiske langs Orkla i Trøndelag." />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='13' cy='16' rx='11' ry='7' fill='%235B7F4A'/%3E%3Ccircle cx='6' cy='14' r='1.4' fill='%23FAF7F2'/%3E%3Cpath d='M24 10 L32 6 L32 26 L24 22 Z' fill='%235B7F4A'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- === NAVIGATION === -->
+  <nav class="nav" role="navigation" aria-label="Hovednavigasjon">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="22" height="16" viewBox="0 0 32 24" fill="currentColor" aria-hidden="true">
+          <ellipse cx="13" cy="12" rx="11" ry="7"/>
+          <circle cx="6" cy="10" r="1.6" fill="var(--color-bg)"/>
+          <path d="M24 6 L32 2 L32 22 L24 18 Z"/>
+        </svg>
+        <span data-i18n="nav.logo">Elveside Familiefiske</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"   data-i18n="nav.home">Hjem</a></li>
+        <li><a href="booking.html" data-i18n="nav.booking">Booking</a></li>
+        <li><a href="about.html"   data-i18n="nav.about">Om oss</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Bytt språk">EN</button>
+        <button type="button" class="hamburger" id="hamburger" aria-label="Åpne meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigasjonsmeny">
+    <a href="index.html"   data-i18n="nav.home">Hjem</a>
+    <a href="booking.html" data-i18n="nav.booking">Booking</a>
+    <a href="about.html"   data-i18n="nav.about">Om oss</a>
+    <a href="gallery.html" data-i18n="nav.gallery">Galleri</a>
+    <button type="button" class="lang-toggle" id="mobile-lang-toggle">EN</button>
+  </div>
+
+  <main>
+
+    <!-- === PAGE BANNER === -->
+    <section class="page-banner" aria-label="Topbilde">
+      <div class="page-banner-bg" style="background-image: url('assets/images/river-aerial.jpg'); background-position: center 40%;"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content container">
+        <h1 data-i18n="gallery.banner.title">Galleri</h1>
+        <p data-i18n="gallery.banner.sub">Bilder fra elva og sesongen</p>
+      </div>
+    </section>
+
+    <!-- === GALLERY GRID === -->
+    <section class="gallery-grid-section">
+      <div class="gallery-grid-inner">
+        <div class="gallery-grid" role="list">
+
+          <!-- Image 1: Morning mist river -->
+          <div class="gallery-item" role="listitem" data-caption="Morgonstillhet over Orkla" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/river-morning.jpg"
+              data-i18n="gallery.img1.alt"
+              alt="Morgontåke over stille elvekulp med grønne bredder"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 2: Fly fishing (tall) -->
+          <div class="gallery-item" role="listitem" data-caption="Fluefiske i Storhølen" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/welcome-fishing.jpg"
+              data-i18n="gallery.img2.alt"
+              alt="Fluefisker kaster linje over bred norsk elv"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 3: Salmon catch -->
+          <div class="gallery-item" role="listitem" data-caption="En fin laks" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/salmon-on-grass.jpg"
+              data-i18n="gallery.img3.alt"
+              alt="Nærbilde av en fanget atlanterhavslaks holdt over vann"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 4: Cabin (tall) -->
+          <div class="gallery-item" role="listitem" data-caption="Hytte Øst ved elvebredden" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/cabin-exterior.jpg"
+              data-i18n="gallery.img4.alt"
+              alt="Koselig trehytte med veranda rett ved elvebredden"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 5: Norwegian landscape -->
+          <div class="gallery-item" role="listitem" data-caption="Orkla-dalen" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/village-river.jpg"
+              data-i18n="gallery.img5.alt"
+              alt="Norsk fjordlandskap med elv og fjell i bakgrunnen"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 6: Fishing gear close-up -->
+          <div class="gallery-item" role="listitem" data-caption="Klare fluer" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/rod-autumn.jpg"
+              data-i18n="gallery.img6.alt"
+              alt="Nærbilde av fluefiskeutstyr og fargrike fluer i en eske"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 7: Campfire / coffee (tall) -->
+          <div class="gallery-item" role="listitem" data-caption="Kaffe ved bålet" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/norwegian-nature.jpg"
+              data-i18n="gallery.img7.alt"
+              alt="Bålplass ved elva med kaffe og kaffekjele i kveldssol"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 8: Mirror water evening -->
+          <div class="gallery-item" role="listitem" data-caption="Speilblank kveld" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/river-evening.jpg"
+              data-i18n="gallery.img8.alt"
+              alt="Speilblank elveoverflate i kveldslys over Orkla"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 9: Child fishing -->
+          <div class="gallery-item" role="listitem" data-caption="Neste generasjon fisker" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/trout-hands.jpg"
+              data-i18n="gallery.img9.alt"
+              alt="Barn fisker med stang i rolig elvestrekk ved hytten"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 10: Valley from above (wide) -->
+          <div class="gallery-item" role="listitem" data-caption="Orkla-dalen fra ovenfor" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/river-aerial.jpg"
+              data-i18n="gallery.img10.alt"
+              alt="Orkela elvedal sett ovenfra med tett skog og blånende fjell"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 11: Sea trout catch -->
+          <div class="gallery-item" role="listitem" data-caption="Fin sjøørret på krok" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/rod-sunset.jpg"
+              data-i18n="gallery.img11.alt"
+              alt="Fanget sjøørret holdes forsiktig over elvevann"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Image 12: Sunrise river (tall) -->
+          <div class="gallery-item" role="listitem" data-caption="Soloppgang over Orkla" tabindex="0" aria-label="Åpne bilde">
+            <img
+              src="assets/images/fishing-norway.jpg"
+              data-i18n="gallery.img12.alt"
+              alt="Soloppgang over Orkla med gylne refleksjoner på vannet"
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3 data-i18n="nav.logo">Elveside Familiefiske</h3>
+        <p data-i18n="footer.tagline">Familiefiske langs Orkla siden 1987.</p>
+        <address class="footer-address" data-i18n="footer.address">Orklavegen 147, 7320 Fannrem</address>
+      </div>
+
+      <nav class="footer-links" aria-label="Sidelenker">
+        <h4 data-i18n="footer.links">Sider</h4>
+        <ul>
+          <li><a href="index.html"   data-i18n="nav.home">Hjem</a></li>
+          <li><a href="booking.html" data-i18n="nav.booking">Booking</a></li>
+          <li><a href="about.html"   data-i18n="nav.about">Om oss</a></li>
+          <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4 data-i18n="footer.contact">Kontakt</h4>
+        <p><a href="tel:+4772440187" data-i18n="footer.phone">+47 72 44 01 87</a></p>
+        <p><a href="mailto:post@elveisidefamiliefiske.no" data-i18n="footer.email">post@elveisidefamiliefiske.no</a></p>
+        <p class="response-note" data-i18n="footer.response">Vi svarer vanligvis innen 24 timer</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Elveside Familiefiske</span>
+      <a href="#" data-i18n="footer.dev">Utviklet av Bithun</a>
+    </div>
+  </footer>
+
+  <!-- === LIGHTBOX === -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildevisning">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Lukk bildevisning">&#x2715;</button>
+    <button type="button" class="lightbox-prev" id="lightbox-prev" aria-label="Forrige bilde">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+    <button type="button" class="lightbox-next" id="lightbox-next" aria-label="Neste bilde">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <!-- No Vipps modal needed on gallery page -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
