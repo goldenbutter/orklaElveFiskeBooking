@@ -3,11 +3,6 @@
 A collection of demo websites built for salmon beat owners in the Trøndelag region. Each demo showcases direct online booking capability as an alternative to third-party platforms.
 
 
-<div align="center">
-  <video src="https://github.com/user-attachments/assets/dc058982-5105-4f6b-ad56-6a33dd15e043" width="100%" controls autoplay loop muted></video>
-</div>
-
-
 ## Purpose
 
 These demos are shown to potential clients to demonstrate what a professional booking website can look like for their beat. When a client signs up, their demo becomes their real site — with their own photos, prices, and branding.
@@ -36,10 +31,16 @@ orklaElveFiskeBooking/
 
 Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
 
-- 👉 **Live:** [orklaelvefiskebooking.netlify.app](https://orklaelvefiskebooking.netlify.app)
+- 👉 **Live:** [orkla-lakse-gård](https://orklaelvefiskebooking.netlify.app)
 - **Pages:** Home, About, Booking
 - **Tone:** Luxury, sleek, exclusive
 - **Features:** Beat selector, live price calculator, Vipps demo modal, NO/EN language toggle
+
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/dc058982-5105-4f6b-ad56-6a33dd15e043" width="100%" controls autoplay loop muted></video>
+</div>
+
 
 ---
 
@@ -47,48 +48,16 @@ Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
 
 Warm, personal aesthetic targeting small family-owned beat owners.
 
-- 👉 **Live:** `<!-- ADD VERCEL URL HERE -->`
+- 👉 **Live:** [orkla-elve-fiske-booking](https://orkla-elve-fiske-booking.vercel.app)
 - **Pages:** Home, Booking, About, Gallery
 - **Tone:** Warm, approachable, personal — "come fish with us"
 - **Features:** Availability calendar, pricing cards, FAQ accordion, lightbox gallery, Vipps demo modal, NO/EN language toggle
 
-#### Pages
 
-| Page | File | Description |
-|---|---|---|
-| Home | `index.html` | Hero, welcome section, offer cards, season strip, testimonial |
-| Booking | `booking.html` | 6 pricing cards, JS availability calendar (May 15–Sep 15), FAQ |
-| About | `about.html` | Family story, photo grid, river info, values |
-| Gallery | `gallery.html` | 12-image masonry grid with lightbox |
-| 404 | `404.html` | Custom friendly error page |
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/03b1a2b1-b792-4506-8858-2de37a90f801" width="100%" controls autoplay loop muted></video>
+</div>
 
-#### Design
-
-| Property | Value |
-|---|---|
-| Fonts | Playfair Display (headings) + Source Sans 3 (body) |
-| Primary colour | `#5B7F4A` (forest green) |
-| Accent colour | `#C17F3E` (warm amber) |
-| Background | `#FAF7F2` (warm off-white) |
-| Max width | 1100px |
-| Breakpoint | 768px (mobile) |
-
-#### Local images (`demo-family-beat/assets/images/`)
-
-| File | Used in |
-|---|---|
-| `fishing-norway.jpg` | Homepage hero, gallery |
-| `welcome-fishing.jpg` | Homepage welcome section, gallery |
-| `village-river.jpg` | Homepage welcome section (desktop), gallery |
-| `cabin-exterior.jpg` | About photo grid, gallery |
-| `river-evening.jpg` | About page banner, gallery |
-| `river-morning.jpg` | About river section, gallery |
-| `rod-autumn.jpg` | About photo grid, gallery |
-| `rod-sunset.jpg` | Gallery |
-| `salmon-on-grass.jpg` | Gallery |
-| `trout-hands.jpg` | Gallery |
-| `river-aerial.jpg` | Gallery banner, gallery |
-| `norwegian-nature.jpg` | Gallery |
 
 ---
 
@@ -110,8 +79,8 @@ Each demo deploys as a separate site pointing to its own subfolder as the publis
 
 | Demo | Folder | Platform | Live URL |
 |---|---|---|---|
-| Orkla Laksegård | `demo-premium-lodge` | Netlify | [orklaelvefiskebooking.netlify.app](https://orklaelvefiskebooking.netlify.app) |
-| Elveside Familiefiske | `demo-family-beat` | Vercel | `<!-- ADD VERCEL URL HERE -->` |
+| Orkla Laksegård | `demo-premium-lodge` | Netlify | [orkla-lakse-gård](https://orklaelvefiskebooking.netlify.app) |
+| Elveside Familiefiske | `demo-family-beat` | Vercel | [orkla-elve-fiske-booking](https://orkla-elve-fiske-booking.vercel.app) |
 
 ---
 
