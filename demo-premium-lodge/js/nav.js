@@ -1,3 +1,46 @@
+// === STICKY BOOKING BAR ===
+function initStickyBar() {
+  const bar = document.getElementById('sticky-bar');
+  const btn = document.getElementById('sticky-bar-btn');
+  const bookingSection = document.getElementById('booking');
+  const scrollTopBtn = document.getElementById('scroll-top');
+
+  if (!bar || !bookingSection) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Booking section is in view — hide bar
+        bar.classList.remove('visible');
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('sticky-bar-visible');
+        if (scrollTopBtn) scrollTopBtn.style.bottom = '';
+      } else {
+        // Only show bar when booking section has scrolled above viewport
+        if (entry.boundingClientRect.top < 0) {
+          bar.classList.add('visible');
+          bar.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('sticky-bar-visible');
+          if (scrollTopBtn) scrollTopBtn.style.bottom = '5rem';
+        } else {
+          bar.classList.remove('visible');
+          bar.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('sticky-bar-visible');
+          if (scrollTopBtn) scrollTopBtn.style.bottom = '';
+        }
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(bookingSection);
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+}
+
 // === NAVIGATION ===
 function initNav() {
   const nav = document.querySelector('.nav');

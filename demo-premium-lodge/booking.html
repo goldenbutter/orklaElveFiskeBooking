@@ -73,6 +73,8 @@
     <section id="booking" class="booking-page" aria-label="Booking">
       <div class="booking-page-inner">
 
+        <div id="offseason-notice" class="offseason-notice" role="alert" aria-live="polite"></div>
+
         <div class="booking-panel fade-in">
 
           <!-- Form side -->
@@ -94,10 +96,12 @@
               <div class="booking-form-group">
                 <label for="booking-arrival" data-i18n="booking.arrival.label">Ankomst</label>
                 <input type="date" id="booking-arrival" class="booking-date" aria-label="Ankomstdato" />
+                <p class="date-error" id="arrival-error" aria-live="polite"></p>
               </div>
               <div class="booking-form-group">
                 <label for="booking-departure" data-i18n="booking.departure.label">Avreise</label>
                 <input type="date" id="booking-departure" class="booking-date" aria-label="Avreisedato" />
+                <p class="date-error" id="departure-error" aria-live="polite"></p>
               </div>
             </div>
 

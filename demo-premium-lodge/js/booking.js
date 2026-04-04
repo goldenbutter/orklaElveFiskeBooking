@@ -1,3 +1,52 @@
+// === OFF-SEASON DETECTION ===
+function getSeasonStatus() {
+  const today = new Date();
+  const m = today.getMonth(); // 0-indexed
+  const d = today.getDate();
+  const before = m < 4 || (m === 4 && d < 15);
+  const after = (m === 8 && d > 15) || m > 8;
+  return { offSeason: before || after, before };
+}
+
+function getNextSeasonYear() {
+  const today = new Date();
+  const { before } = getSeasonStatus();
+  return before ? today.getFullYear() : today.getFullYear() + 1;
+}
+
+function updateOffseasonNotice() {
+  const notice = document.getElementById('offseason-notice');
+  if (!notice) return;
+  const { offSeason } = getSeasonStatus();
+  if (!offSeason) {
+    notice.classList.remove('visible');
+    return;
+  }
+  const year = getNextSeasonYear();
+  const t = translations[currentLang];
+  notice.textContent = t['booking.offseason.notice'].replace('{year}', year);
+  notice.classList.add('visible');
+}
+
+function validateDateInput(input, errorId) {
+  const errorEl = document.getElementById(errorId);
+  if (!errorEl || !input) return;
+  if (!input.value) {
+    errorEl.classList.remove('visible');
+    return;
+  }
+  const val = new Date(input.value + 'T12:00:00');
+  const yr = val.getFullYear();
+  const seasonStart = new Date(`${yr}-05-15T12:00:00`);
+  const seasonEnd = new Date(`${yr}-09-15T12:00:00`);
+  if (val < seasonStart || val > seasonEnd) {
+    errorEl.textContent = translations[currentLang]['booking.date.error'];
+    errorEl.classList.add('visible');
+  } else {
+    errorEl.classList.remove('visible');
+  }
+}
+
 // === BOOKING SYSTEM ===
 const BEATS = {
   'ovre-elv': { maxRods: 3 },
@@ -165,6 +214,26 @@ function initBooking() {
     departureInput.max = seasonMax;
   }
 
+  // Pre-fill arrival date and show notice when currently off-season
+  const { offSeason, before } = getSeasonStatus();
+  if (offSeason) {
+    const fillYear = before ? new Date().getFullYear() : new Date().getFullYear() + 1;
+    if (arrivalInput && !arrivalInput.value) {
+      arrivalInput.value = `${fillYear}-05-15`;
+      if (departureInput) departureInput.min = `${fillYear}-05-16`;
+    }
+  }
+  updateOffseasonNotice();
+
+  // Re-run notice + error text on language toggle
+  document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach(btn => {
+    if (btn) btn.addEventListener('click', () => {
+      updateOffseasonNotice();
+      if (arrivalInput && arrivalInput.value) validateDateInput(arrivalInput, 'arrival-error');
+      if (departureInput && departureInput.value) validateDateInput(departureInput, 'departure-error');
+    });
+  });
+
   let maxRods = 4;
   let currentRods = 1;
 
@@ -188,6 +257,7 @@ function initBooking() {
   // Arrival change
   if (arrivalInput) {
     arrivalInput.addEventListener('change', () => {
+      validateDateInput(arrivalInput, 'arrival-error');
       if (arrivalInput.value) {
         const nextDay = new Date(arrivalInput.value + 'T12:00:00');
         nextDay.setDate(nextDay.getDate() + 1);
@@ -203,7 +273,12 @@ function initBooking() {
     });
   }
 
-  if (departureInput) departureInput.addEventListener('change', updateBookingDisplay);
+  if (departureInput) {
+    departureInput.addEventListener('change', () => {
+      validateDateInput(departureInput, 'departure-error');
+      updateBookingDisplay();
+    });
+  }
 
   // Stepper
   if (rodsMinus) rodsMinus.addEventListener('click', () => {

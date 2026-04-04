@@ -83,6 +83,75 @@
     bottom: 1.25rem;
     right: 1.25rem;
   }
+
+  /* Sticky bar */
+  .sticky-bar {
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 var(--space-sm);
+  }
+
+  .sticky-bar-text {
+    display: none;
+  }
+
+  /* Off-season notice */
+  .offseason-notice {
+    font-size: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+
+  /* Season calendar — vertical timeline on mobile */
+  .season-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+    padding-left: 1.25rem;
+  }
+
+  .season-grid::before {
+    content: '';
+    position: absolute;
+    left: 0.4rem;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, #7ec8c8, var(--color-gold), var(--color-border-strong), #c8a07e);
+    border-radius: 1px;
+  }
+
+  .season-block {
+    border-top: 1px solid var(--color-border);
+    border-left-width: 3px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin-bottom: 1rem;
+  }
+
+  .season-block--early,
+  .season-block--peak,
+  .season-block--mid,
+  .season-block--late {
+    border-top-color: var(--color-border);
+  }
+
+  .season-block--early { border-left-color: #7ec8c8; }
+  .season-block--peak  { border-left-color: var(--color-gold); }
+  .season-block--mid   { border-left-color: var(--color-border-strong); }
+  .season-block--late  { border-left-color: #c8a07e; }
+
+  /* Catch report — hide table, show cards */
+  .catch-table-wrap {
+    display: none;
+  }
+
+  .catch-cards {
+    display: flex;
+  }
+
+  /* River conditions */
+  .conditions-card {
+    padding: 1.25rem;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
