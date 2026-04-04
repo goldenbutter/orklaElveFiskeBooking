@@ -605,6 +605,326 @@
 .price-ref-badge--peak  { color: var(--color-gold); }
 .price-ref-badge--late  { color: #c8a07e; }
 
+/* === OFF-SEASON NOTICE === */
+.offseason-notice {
+  display: none;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-gold-light);
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.offseason-notice.visible {
+  display: block;
+}
+
+/* === DATE ERROR MESSAGE === */
+.date-error {
+  display: none;
+  font-size: 0.78rem;
+  color: #e07070;
+  margin-top: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.date-error.visible {
+  display: block;
+}
+
+/* === SEASON CALENDAR SECTION === */
+.season-calendar {
+  padding: var(--space-xl) var(--space-md);
+  background: var(--color-bg);
+}
+
+.season-calendar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.season-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top-width: 3px;
+  border-top-color: var(--color-border-strong);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.season-block--early { border-top-color: #7ec8c8; }
+.season-block--peak  { border-top-color: var(--color-gold); }
+.season-block--mid   { border-top-color: var(--color-border-strong); }
+.season-block--late  { border-top-color: #c8a07e; }
+
+.season-block-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+}
+
+.season-block-dates {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.season-block-price {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-gold);
+  margin-top: auto;
+  line-height: 1;
+}
+
+.season-block-price span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+.season-block-tip {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: 1.5;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+/* === CATCH REPORT SECTION === */
+.catch-report {
+  padding: var(--space-xl) var(--space-md);
+  background: var(--color-surface);
+}
+
+.catch-report-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.catch-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.catch-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.catch-table th {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  text-align: left;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-strong);
+  white-space: nowrap;
+  background: var(--color-surface-2);
+}
+
+.catch-table td {
+  padding: 0.85rem 1.25rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.catch-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.catch-table tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.catch-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.catch-table tbody tr:hover {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.catch-weight {
+  color: var(--color-gold);
+  font-weight: 400;
+}
+
+.catch-record-row td {
+  background: rgba(201, 168, 76, 0.05) !important;
+}
+
+.record-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-gold);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.catch-cards {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.catch-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.catch-card--record {
+  border-color: var(--color-border-strong);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.catch-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.875rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.catch-card-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.catch-card-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* === RIVER CONDITIONS WIDGET === */
+.conditions-card {
+  max-width: 1280px;
+  margin: 0 auto var(--space-lg);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+}
+
+.conditions-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.conditions-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.conditions-value-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.2rem;
+}
+
+.conditions-value-text {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.conditions-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.conditions-tag {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.conditions-tag--normal {
+  color: #4caf7d;
+  background: rgba(76, 175, 125, 0.12);
+  border: 1px solid rgba(76, 175, 125, 0.3);
+}
+
+.conditions-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(240, 236, 227, 0.18);
+  flex-shrink: 0;
+}
+
+.dot--filled {
+  background: var(--color-gold);
+}
+
+.conditions-updated {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  margin-top: 0;
+}
+
 /* === BOOKING PAGE === */
 .booking-page {
   padding: var(--space-lg) var(--space-md) var(--space-xl);

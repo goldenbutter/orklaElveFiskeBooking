@@ -180,3 +180,52 @@
   margin-top: var(--space-sm);
   align-self: flex-start;
 }
+
+/* === STICKY BOOKING BAR === */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+  background: rgba(8, 15, 10, 0.92);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--color-border);
+  z-index: 80;
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.sticky-bar.visible {
+  transform: translateY(0);
+}
+
+.sticky-bar-text {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.sticky-bar-btn {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-gold);
+  padding: 0.6rem 1.75rem;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+
+.sticky-bar-btn:hover {
+  background: var(--color-gold-light);
+}

@@ -233,6 +233,49 @@
     </section>
 
 
+    <!-- === SEASON CALENDAR SECTION === -->
+    <section id="season-calendar" class="season-calendar" aria-label="Sesongkalender">
+      <div class="season-calendar-inner">
+        <div class="section-header fade-in">
+          <span class="section-badge" data-i18n="calendar.badge">Sesongkalender</span>
+          <h2 data-i18n="calendar.heading">Planlegg sesongen din</h2>
+          <div class="divider-line"></div>
+        </div>
+        <div class="season-grid">
+
+          <div class="season-block season-block--early fade-in">
+            <h3 class="season-block-name" data-i18n="calendar.early.name">Tidligsesong</h3>
+            <p class="season-block-dates" data-i18n="calendar.early.dates">15.–31. mai</p>
+            <p class="season-block-price">750 <span data-i18n="calendar.perrod">kr/stang/dag</span></p>
+            <p class="season-block-tip" data-i18n="calendar.early.tip">Første laksen, rolige elver</p>
+          </div>
+
+          <div class="season-block season-block--peak fade-in fade-in-delay-1">
+            <h3 class="season-block-name" data-i18n="calendar.peak.name">Høysesong</h3>
+            <p class="season-block-dates" data-i18n="calendar.peak.dates">1. jun – 15. jul</p>
+            <p class="season-block-price">950 <span data-i18n="calendar.perrod">kr/stang/dag</span></p>
+            <p class="season-block-tip" data-i18n="calendar.peak.tip">Beste fiske, størst etterspørsel</p>
+          </div>
+
+          <div class="season-block season-block--mid fade-in fade-in-delay-2">
+            <h3 class="season-block-name" data-i18n="calendar.mid.name">Midsesong</h3>
+            <p class="season-block-dates" data-i18n="calendar.mid.dates">16. jul – 31. aug</p>
+            <p class="season-block-price">850 <span data-i18n="calendar.perrod">kr/stang/dag</span></p>
+            <p class="season-block-tip" data-i18n="calendar.mid.tip">Stabil fangst, varmt vær</p>
+          </div>
+
+          <div class="season-block season-block--late fade-in fade-in-delay-3">
+            <h3 class="season-block-name" data-i18n="calendar.late.name">Sluttsesong</h3>
+            <p class="season-block-dates" data-i18n="calendar.late.dates">1.–15. sep</p>
+            <p class="season-block-price">650 <span data-i18n="calendar.perrod">kr/stang/dag</span></p>
+            <p class="season-block-tip" data-i18n="calendar.late.tip">Store hunnlaks, lave priser</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
     <!-- === BOOKING SECTION === -->
     <section id="booking" class="booking" aria-label="Booking">
       <div class="booking-inner">
@@ -241,6 +284,8 @@
           <h2 data-i18n="booking.heading">Book ditt opphold</h2>
           <div class="divider-line"></div>
         </div>
+
+        <div id="offseason-notice" class="offseason-notice" role="alert" aria-live="polite"></div>
 
         <div class="booking-panel fade-in">
 
@@ -263,10 +308,12 @@
               <div class="booking-form-group">
                 <label for="booking-arrival" data-i18n="booking.arrival.label">Ankomst</label>
                 <input type="date" id="booking-arrival" class="booking-date" aria-label="Ankomstdato" />
+                <p class="date-error" id="arrival-error" aria-live="polite"></p>
               </div>
               <div class="booking-form-group">
                 <label for="booking-departure" data-i18n="booking.departure.label">Avreise</label>
                 <input type="date" id="booking-departure" class="booking-date" aria-label="Avreisedato" />
+                <p class="date-error" id="departure-error" aria-live="polite"></p>
               </div>
             </div>
 
@@ -476,8 +523,167 @@
     </section>
 
 
+    <!-- === CATCH REPORT SECTION === -->
+    <section id="catch-report" class="catch-report" aria-label="Fangstrapport">
+      <div class="catch-report-inner">
+        <div class="section-header fade-in">
+          <span class="section-badge" data-i18n="catch.badge">Fangstrapport</span>
+          <h2 data-i18n="catch.heading">Siste fangster fra Orkla</h2>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Desktop table -->
+        <div class="catch-table-wrap fade-in">
+          <table class="catch-table">
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="catch.col.date">Dato</th>
+                <th scope="col" data-i18n="catch.col.beat">Beat</th>
+                <th scope="col" data-i18n="catch.col.weight">Vekt</th>
+                <th scope="col" data-i18n="catch.col.method">Metode</th>
+                <th scope="col" data-i18n="catch.col.angler">Fisker</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>28. aug 2025</td>
+                <td>Øvre Elv</td>
+                <td class="catch-weight">8,2 kg</td>
+                <td>Flue</td>
+                <td>Thomas B.</td>
+              </tr>
+              <tr>
+                <td>25. aug 2025</td>
+                <td>Nedre Poll</td>
+                <td class="catch-weight">5,7 kg</td>
+                <td>Sluk</td>
+                <td>Kari M.</td>
+              </tr>
+              <tr class="catch-record-row">
+                <td>22. aug 2025</td>
+                <td>Midtre Stryk</td>
+                <td class="catch-weight">11,4 kg <span class="record-badge" data-i18n="catch.record.badge">Sesongrekord</span></td>
+                <td>Flue</td>
+                <td>Erik S.</td>
+              </tr>
+              <tr>
+                <td>18. aug 2025</td>
+                <td>Øvre Elv</td>
+                <td class="catch-weight">6,9 kg</td>
+                <td>Flue</td>
+                <td>Anders L.</td>
+              </tr>
+              <tr>
+                <td>15. aug 2025</td>
+                <td>Nedre Poll</td>
+                <td class="catch-weight">4,3 kg</td>
+                <td>Sluk</td>
+                <td>Ingrid P.</td>
+              </tr>
+              <tr>
+                <td>12. aug 2025</td>
+                <td>Midtre Stryk</td>
+                <td class="catch-weight">9,1 kg</td>
+                <td>Flue</td>
+                <td>Hans O.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile cards -->
+        <div class="catch-cards">
+          <div class="catch-card fade-in">
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.date">Dato</span><span>28. aug 2025</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.beat">Beat</span><span>Øvre Elv</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.weight">Vekt</span><span class="catch-weight">8,2 kg</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.method">Metode</span><span>Flue</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.angler">Fisker</span><span>Thomas B.</span></div>
+          </div>
+          <div class="catch-card fade-in fade-in-delay-1">
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.date">Dato</span><span>25. aug 2025</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.beat">Beat</span><span>Nedre Poll</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.weight">Vekt</span><span class="catch-weight">5,7 kg</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.method">Metode</span><span>Sluk</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.angler">Fisker</span><span>Kari M.</span></div>
+          </div>
+          <div class="catch-card catch-card--record fade-in fade-in-delay-2">
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.date">Dato</span><span>22. aug 2025</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.beat">Beat</span><span>Midtre Stryk</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.weight">Vekt</span><span class="catch-weight">11,4 kg <span class="record-badge" data-i18n="catch.record.badge">Sesongrekord</span></span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.method">Metode</span><span>Flue</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.angler">Fisker</span><span>Erik S.</span></div>
+          </div>
+          <div class="catch-card fade-in">
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.date">Dato</span><span>18. aug 2025</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.beat">Beat</span><span>Øvre Elv</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.weight">Vekt</span><span class="catch-weight">6,9 kg</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.method">Metode</span><span>Flue</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.angler">Fisker</span><span>Anders L.</span></div>
+          </div>
+          <div class="catch-card fade-in fade-in-delay-1">
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.date">Dato</span><span>15. aug 2025</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.beat">Beat</span><span>Nedre Poll</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.weight">Vekt</span><span class="catch-weight">4,3 kg</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.method">Metode</span><span>Sluk</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.angler">Fisker</span><span>Ingrid P.</span></div>
+          </div>
+          <div class="catch-card fade-in fade-in-delay-2">
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.date">Dato</span><span>12. aug 2025</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.beat">Beat</span><span>Midtre Stryk</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.weight">Vekt</span><span class="catch-weight">9,1 kg</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.method">Metode</span><span>Flue</span></div>
+            <div class="catch-card-row"><span class="catch-card-label" data-i18n="catch.col.angler">Fisker</span><span>Hans O.</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- === CONTACT SECTION === -->
     <section id="contact" class="contact" aria-label="Kontakt">
+
+      <!-- River conditions widget -->
+      <div class="conditions-card fade-in">
+        <h3 class="conditions-title" data-i18n="conditions.title">Elveforhold nå</h3>
+        <div class="conditions-grid">
+          <div class="conditions-item">
+            <div class="conditions-value-row">
+              <span class="conditions-value-text" data-i18n="conditions.watertemp.value">12°C</span>
+            </div>
+            <span class="conditions-label" data-i18n="conditions.watertemp.label">Vanntemperatur</span>
+          </div>
+          <div class="conditions-item">
+            <div class="conditions-value-row">
+              <span class="conditions-value-text" data-i18n="conditions.waterlevel.value">48 cm</span>
+              <span class="conditions-tag conditions-tag--normal" data-i18n="conditions.tag.normal">Normal</span>
+            </div>
+            <span class="conditions-label" data-i18n="conditions.waterlevel.label">Vannstand</span>
+          </div>
+          <div class="conditions-item">
+            <div class="conditions-value-row">
+              <span class="conditions-value-text" data-i18n="conditions.airtemp.value">16°C</span>
+            </div>
+            <span class="conditions-label" data-i18n="conditions.airtemp.label">Lufttemperatur</span>
+          </div>
+          <div class="conditions-item">
+            <div class="conditions-value-row">
+              <span class="conditions-value-text" data-i18n="conditions.rating.value">God</span>
+              <span class="conditions-dots" aria-hidden="true">
+                <span class="dot dot--filled"></span>
+                <span class="dot dot--filled"></span>
+                <span class="dot dot--filled"></span>
+                <span class="dot dot--filled"></span>
+                <span class="dot"></span>
+              </span>
+            </div>
+            <span class="conditions-label" data-i18n="conditions.rating.label">Forhold</span>
+          </div>
+        </div>
+        <p class="conditions-updated" data-i18n="conditions.updated">Sist oppdatert: i dag kl. 08:00</p>
+      </div>
+
       <div class="contact-inner">
         <div class="fade-in">
           <span class="section-badge" data-i18n="contact.badge">Finn oss</span>
@@ -537,6 +743,13 @@ Orkland, Trøndelag</span>
       <p class="modal-sub" data-i18n="modal.sub">Du vil motta en bekreftelse på e-post innen 24 timer.</p>
       <button class="modal-close" id="modal-close" data-i18n="modal.close">Lukk</button>
     </div>
+  </div>
+
+
+  <!-- === STICKY BOOKING BAR === -->
+  <div id="sticky-bar" class="sticky-bar" role="complementary" aria-label="Hurtigbooking" aria-hidden="true">
+    <span class="sticky-bar-text" data-i18n="sticky.text">Klar til å booke? Priser fra 650 kr/stang/dag</span>
+    <button type="button" class="sticky-bar-btn" id="sticky-bar-btn" data-i18n="sticky.cta">Book nå</button>
   </div>
 
 

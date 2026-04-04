@@ -155,6 +155,54 @@ const translations = {
     'stats.label2': 'Meter elvestrekk',
     'stats.label3': 'Laks fanget per sesong',
     'stats.label4': 'Maks stenger samtidig',
+
+    // Off-season notice and date validation
+    'booking.offseason.notice': 'Sesongen {year} åpner 15. mai — reserver din plass nå!',
+    'booking.date.error': 'Sesongen er 15. mai – 15. september',
+
+    // Catch report section
+    'catch.badge': 'Fangstrapport',
+    'catch.heading': 'Siste fangster fra Orkla',
+    'catch.col.date': 'Dato',
+    'catch.col.beat': 'Beat',
+    'catch.col.weight': 'Vekt',
+    'catch.col.method': 'Metode',
+    'catch.col.angler': 'Fisker',
+    'catch.record.badge': 'Sesongrekord',
+
+    // Sticky booking bar
+    'sticky.text': 'Klar til å booke? Priser fra 650 kr/stang/dag',
+    'sticky.cta': 'Book nå',
+
+    // River conditions widget
+    'conditions.title': 'Elveforhold nå',
+    'conditions.watertemp.label': 'Vanntemperatur',
+    'conditions.watertemp.value': '12°C',
+    'conditions.waterlevel.label': 'Vannstand',
+    'conditions.waterlevel.value': '48 cm',
+    'conditions.tag.normal': 'Normal',
+    'conditions.airtemp.label': 'Lufttemperatur',
+    'conditions.airtemp.value': '16°C',
+    'conditions.rating.label': 'Forhold',
+    'conditions.rating.value': 'God',
+    'conditions.updated': 'Sist oppdatert: i dag kl. 08:00',
+
+    // Season calendar section
+    'calendar.badge': 'Sesongkalender',
+    'calendar.heading': 'Planlegg sesongen din',
+    'calendar.early.name': 'Tidligsesong',
+    'calendar.early.dates': '15.–31. mai',
+    'calendar.early.tip': 'Første laksen, rolige elver',
+    'calendar.peak.name': 'Høysesong',
+    'calendar.peak.dates': '1. jun – 15. jul',
+    'calendar.peak.tip': 'Beste fiske, størst etterspørsel',
+    'calendar.mid.name': 'Midsesong',
+    'calendar.mid.dates': '16. jul – 31. aug',
+    'calendar.mid.tip': 'Stabil fangst, varmt vær',
+    'calendar.late.name': 'Sluttsesong',
+    'calendar.late.dates': '1.–15. sep',
+    'calendar.late.tip': 'Store hunnlaks, lave priser',
+    'calendar.perrod': 'kr/stang/dag',
   },
 
   en: {
@@ -312,5 +360,53 @@ const translations = {
     'stats.label2': 'Metres of river stretch',
     'stats.label3': 'Salmon caught per season',
     'stats.label4': 'Max rods at any time',
+
+    // Off-season notice and date validation
+    'booking.offseason.notice': 'The {year} season opens 15 May — reserve your spot now!',
+    'booking.date.error': 'Season runs 15 May – 15 September',
+
+    // Catch report section
+    'catch.badge': 'Catch Report',
+    'catch.heading': 'Recent catches from the Orkla',
+    'catch.col.date': 'Date',
+    'catch.col.beat': 'Beat',
+    'catch.col.weight': 'Weight',
+    'catch.col.method': 'Method',
+    'catch.col.angler': 'Angler',
+    'catch.record.badge': 'Season record',
+
+    // Sticky booking bar
+    'sticky.text': 'Ready to book? Prices from 650 NOK/rod/day',
+    'sticky.cta': 'Book now',
+
+    // River conditions widget
+    'conditions.title': 'River conditions now',
+    'conditions.watertemp.label': 'Water temp',
+    'conditions.watertemp.value': '12°C',
+    'conditions.waterlevel.label': 'Water level',
+    'conditions.waterlevel.value': '48 cm',
+    'conditions.tag.normal': 'Normal',
+    'conditions.airtemp.label': 'Air temp',
+    'conditions.airtemp.value': '16°C',
+    'conditions.rating.label': 'Conditions',
+    'conditions.rating.value': 'Good',
+    'conditions.updated': 'Last updated: today at 08:00',
+
+    // Season calendar section
+    'calendar.badge': 'Season calendar',
+    'calendar.heading': 'Plan your season',
+    'calendar.early.name': 'Early season',
+    'calendar.early.dates': '15–31 May',
+    'calendar.early.tip': 'First salmon, quiet rivers',
+    'calendar.peak.name': 'Peak season',
+    'calendar.peak.dates': '1 Jun – 15 Jul',
+    'calendar.peak.tip': 'Best fishing, highest demand',
+    'calendar.mid.name': 'Mid season',
+    'calendar.mid.dates': '16 Jul – 31 Aug',
+    'calendar.mid.tip': 'Steady catches, warm weather',
+    'calendar.late.name': 'Late season',
+    'calendar.late.dates': '1–15 Sep',
+    'calendar.late.tip': 'Large hen salmon, low prices',
+    'calendar.perrod': 'NOK/rod/day',
   }
 };
