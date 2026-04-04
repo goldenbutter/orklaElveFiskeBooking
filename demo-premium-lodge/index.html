@@ -62,13 +62,16 @@
 
   <!-- === HERO SECTION === -->
   <section id="hero" class="hero" aria-label="Introduksjon">
-    <img
+    <video
       class="hero-bg"
-      src="assets/images/hero.jpg"
-      data-i18n-alt="hero.img.alt"
-      alt="Fluefisker på bred norsk elv med fjell i bakgrunnen"
-      fetchpriority="high"
-    />
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="assets/images/man-fishing.jpg"
+    >
+      <source src="assets/videos/man-fishing-2.mp4" type="video/mp4" />
+    </video>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <h1 data-i18n="hero.headline">Fang din drøm på Orkla</h1>
