@@ -1,0 +1,90 @@
+/* === VIPPS MODAL === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 15, 10, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  transform: translateY(10px);
+  transition: transform 0.25s ease;
+}
+
+.modal-overlay.open .modal-box {
+  transform: translateY(0);
+}
+
+.modal-vipps-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-vipps);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto 1.5rem;
+  font-family: var(--font-body);
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.modal-text {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.modal-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.modal-close {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}

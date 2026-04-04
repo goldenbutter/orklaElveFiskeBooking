@@ -1,0 +1,113 @@
+/* === RESPONSIVE === */
+
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 3rem;
+    --space-xl: 4.5rem;
+  }
+
+  /* Nav */
+  .nav-links,
+  .nav-right .lang-toggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* About */
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-wrap {
+    order: -1;
+  }
+
+  .about-image-wrap::before {
+    display: none;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Beats */
+  .beats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Booking */
+  .booking-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form-side {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .date-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    columns: 1;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact */
+  .contact-inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* Guide grid */
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Scroll top */
+  .scroll-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .beats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    columns: 2;
+  }
+
+  .booking-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form-side {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .booking-summary-side {
+    min-height: 300px;
+  }
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+  }
+}
