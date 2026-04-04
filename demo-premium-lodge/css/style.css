@@ -449,6 +449,58 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
   z-index: -1;
 }
 
+/* === STATS SECTION === */
+.stats {
+  padding: var(--space-xl) var(--space-md);
+  background: var(--color-surface);
+}
+
+.stats-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 600;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* === BEATS SECTION === */
 .beats {
   padding: var(--space-xl) var(--space-md);

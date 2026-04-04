@@ -148,6 +148,13 @@ const translations = {
     'priceref.label.early': 'Tidligsesong',
     'priceref.label.peak': 'Høysesong',
     'priceref.label.late': 'Sluttsesong',
+
+    // Stats section
+    'stats.badge': 'Orkla Laksegård i tall',
+    'stats.label1': 'År med fisketradisjon',
+    'stats.label2': 'Meter elvestrekk',
+    'stats.label3': 'Laks fanget per sesong',
+    'stats.label4': 'Maks stenger samtidig',
   },
 
   en: {
@@ -298,6 +305,13 @@ const translations = {
     'priceref.label.early': 'Early season',
     'priceref.label.peak': 'Peak season',
     'priceref.label.late': 'Late season',
+
+    // Stats section
+    'stats.badge': 'Orkla Salmon Lodge in numbers',
+    'stats.label1': 'Years of fishing tradition',
+    'stats.label2': 'Metres of river stretch',
+    'stats.label3': 'Salmon caught per season',
+    'stats.label4': 'Max rods at any time',
   }
 };
 
@@ -724,6 +738,46 @@ function initBeatFromURL() {
   }
 }
 
+// === STATS COUNT-UP ===
+function initStatsCounter() {
+  const numbers = document.querySelectorAll('.stat-number[data-count-target]');
+  if (!numbers.length) return;
+
+  const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+  const duration = 2000;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+
+      const el = entry.target;
+      const target = parseInt(el.dataset.countTarget, 10);
+      const suffix = el.dataset.countSuffix || '';
+      const displayFinal = el.dataset.countDisplay || null;
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
+        const current = Math.round(eased * target);
+
+        if (progress < 1) {
+          el.textContent = current + suffix;
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = displayFinal ? displayFinal + suffix : target + suffix;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+
+  numbers.forEach(el => observer.observe(el));
+}
+
 // === INIT ===
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
@@ -734,4 +788,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initBeatBookLinks();
   initBeatFromURL();
+  initStatsCounter();
 });
