@@ -38,7 +38,7 @@ Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
 
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/dc058982-5105-4f6b-ad56-6a33dd15e043" width="100%" controls autoplay loop muted></video>
+  <video src="https://github.com/user-attachments/assets/bd61a198-016f-42d8-a160-78083fc41a17" width="100%" controls autoplay loop muted></video>
 </div>
 
 
