@@ -79,7 +79,7 @@ Each demo deploys as a separate site pointing to its own subfolder as the publis
 
 | Demo | Folder | Platform | Live URL |
 |---|---|---|---|
-| Orkla Laksegård | `demo-premium-lodge` | Netlify | [orkla-lakse-gård](https://orkla-fiske-booking.vercel.app) |
+| Orkla Laksegård | `demo-premium-lodge` | Vercel | [orkla-lakse-gård](https://orkla-fiske-booking.vercel.app) |
 | Elveside Familiefiske | `demo-family-beat` | Vercel | [orkla-elve-fiske-booking](https://orkla-elve-fiske-booking.vercel.app) |
 
 ---
