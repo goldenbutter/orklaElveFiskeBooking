@@ -31,7 +31,7 @@ orklaElveFiskeBooking/
 
 Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
 
-- 👉 **Live:** [orkla-lakse-gård](https://orklaelvefiskebooking.netlify.app)
+- 👉 **Live:** [orkla-lakse-gård](https://orkla-fiske-booking.vercel.app)
 - **Pages:** Home, About, Booking
 - **Tone:** Luxury, sleek, exclusive
 - **Features:** Beat selector, live price calculator, Vipps demo modal, NO/EN language toggle
@@ -79,7 +79,7 @@ Each demo deploys as a separate site pointing to its own subfolder as the publis
 
 | Demo | Folder | Platform | Live URL |
 |---|---|---|---|
-| Orkla Laksegård | `demo-premium-lodge` | Netlify | [orkla-lakse-gård](https://orklaelvefiskebooking.netlify.app) |
+| Orkla Laksegård | `demo-premium-lodge` | Netlify | [orkla-lakse-gård](https://orkla-fiske-booking.vercel.app) |
 | Elveside Familiefiske | `demo-family-beat` | Vercel | [orkla-elve-fiske-booking](https://orkla-elve-fiske-booking.vercel.app) |
 
 ---
