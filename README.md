@@ -12,7 +12,7 @@ These demos are shown to potential clients to demonstrate what a professional bo
 - Pure HTML, CSS, and vanilla JavaScript
 - No frameworks, no build tools, no dependencies
 - Google Fonts via CDN
-- Deployed on Netlify (one site per demo)
+- Deployed on Vercel
 
 ## Project Structure
 
