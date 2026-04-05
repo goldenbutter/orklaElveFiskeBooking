@@ -31,7 +31,7 @@ orklaElveFiskeBooking/
 
 Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
 
-- 👉 **Live:** [orkla-lakse-gård](https://orkla-fiske-booking.vercel.app)
+- 👉 **Live:** [demo-premium-lodge.ibithun.com](https://demo-premium-lodge.ibithun.com)
 - **Pages:** Home, About, Booking
 - **Tone:** Luxury, sleek, exclusive
 - **Features:** Beat selector, live price calculator, Vipps demo modal, NO/EN language toggle
@@ -48,7 +48,7 @@ Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
 
 Warm, personal aesthetic targeting small family-owned beat owners.
 
-- 👉 **Live:** [orkla-elve-fiske-booking](https://orkla-elve-fiske-booking.vercel.app)
+- 👉 **Live:** [demo-family-beat.ibithun.com](https://demo-family-beat.ibithun.com)
 - **Pages:** Home, Booking, About, Gallery
 - **Tone:** Warm, approachable, personal — "come fish with us"
 - **Features:** Availability calendar, pricing cards, FAQ accordion, lightbox gallery, Vipps demo modal, NO/EN language toggle
@@ -79,8 +79,8 @@ Each demo deploys as a separate site pointing to its own subfolder as the publis
 
 | Demo | Folder | Platform | Live URL |
 |---|---|---|---|
-| Orkla Laksegård | `demo-premium-lodge` | Vercel | [orkla-lakse-gård](https://orkla-fiske-booking.vercel.app) |
-| Elveside Familiefiske | `demo-family-beat` | Vercel | [orkla-elve-fiske-booking](https://orkla-elve-fiske-booking.vercel.app) |
+| Orkla Laksegård | `demo-premium-lodge` | Vercel | [demo-premium-lodge.ibithun.com](https://demo-premium-lodge.ibithun.com) |
+| Elveside Familiefiske | `demo-family-beat` | Vercel | [demo-family-beat.ibithun.com](https://demo-family-beat.ibithun.com) |
 
 ---
 
