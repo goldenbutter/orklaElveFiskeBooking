@@ -424,6 +424,10 @@
   color: var(--color-gold);
 }
 
+.footer-views {
+  margin-top: 0.75rem;
+}
+
 /* === SCROLL TO TOP === */
 .scroll-top {
   position: fixed;
