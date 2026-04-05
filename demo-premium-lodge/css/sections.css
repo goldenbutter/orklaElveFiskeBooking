@@ -400,7 +400,7 @@
 .footer {
   background: var(--color-bg);
   border-top: 1px solid var(--color-border);
-  padding: var(--space-md) var(--space-md);
+  padding: var(--space-md) var(--space-md) 80px;
   text-align: center;
 }
 
