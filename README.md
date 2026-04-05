@@ -18,9 +18,47 @@ These demos are shown to potential clients to demonstrate what a professional bo
 
 ```
 orklaElveFiskeBooking/
-├── shared/                  # Shared assets (Vipps modal, favicon)
-├── demo-premium-lodge/      # Demo 1 — Orkla Laksegård (premium lodge)
-└── demo-family-beat/        # Demo 2 — Elveside Familiefiske (family beat)
+├── README.md
+├── demo-premium-lodge/              # Demo 1 — Orkla Laksegård
+│   ├── index.html
+│   ├── booking.html
+│   ├── about.html
+│   ├── 404.html
+│   ├── favicon.svg                  # Gold fish hook (Vercel project icon)
+│   ├── css/
+│   │   ├── style.css                # Imports only
+│   │   ├── base.css                 # Variables, reset, typography
+│   │   ├── nav.css                  # Navigation + sticky booking bar
+│   │   ├── hero.css                 # Hero section
+│   │   ├── sections.css             # All content sections + footer
+│   │   ├── booking.css              # Booking form + stepper
+│   │   ├── modal.css                # Vipps demo modal
+│   │   └── responsive.css           # Media queries
+│   ├── js/
+│   │   ├── app.js                   # Init entry point
+│   │   ├── translations.js          # NO/EN translation strings
+│   │   ├── language.js              # Language toggle logic
+│   │   ├── nav.js                   # Navigation + hamburger
+│   │   ├── animations.js            # Scroll animations + stats counter
+│   │   ├── booking.js               # Beat data, pricing, booking logic
+│   │   └── modal.js                 # Vipps demo modal
+│   └── assets/
+│       ├── images/                  # 11 local jpg files
+│       └── videos/                  # Hero video (mp4) + preview gifs
+│
+└── demo-family-beat/                # Demo 2 — Elveside Familiefiske
+    ├── index.html
+    ├── booking.html
+    ├── about.html
+    ├── gallery.html
+    ├── 404.html
+    ├── favicon.svg                  # Green fish (Vercel project icon)
+    ├── css/
+    │   └── style.css                # All styles in one file
+    ├── js/
+    │   └── main.js                  # All JS in one file
+    └── assets/
+        └── images/                  # 17 local jpg files
 ```
 
 ---
