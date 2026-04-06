@@ -84,6 +84,29 @@ const translations = {
     'gallery.img6.alt': 'Hender holder en levende ørret forsiktig over elvestrøm',
     'gallery.img7.alt': 'Dramatisk norsk fjordlandskap fra Trolltunga i solnedgang',
     'gallery.img8.alt': 'Mørk elvekløft gjennom tett granskog',
+    'gallery.img9.alt': 'Norsk villmark og elvelandskap',
+    'gallery.img10.alt': 'Dramatisk norsk fjordlandskap',
+
+    'gallery.item1.title': 'Elvedalen',
+    'gallery.item1.desc': 'Orkla sett fra oven',
+    'gallery.item2.title': 'Landsbyen',
+    'gallery.item2.desc': 'Idyllisk elvedal',
+    'gallery.item3.title': 'Fjorden',
+    'gallery.item3.desc': 'Norsk naturskjønnhet',
+    'gallery.item4.title': 'Fangsten',
+    'gallery.item4.desc': 'Atlanterhavslaks fra Orkla',
+    'gallery.item5.title': 'Høstfiske',
+    'gallery.item5.desc': 'Gylne farger ved elva',
+    'gallery.item6.title': 'Solnedgang',
+    'gallery.item6.desc': 'Kveldsfiske i gyllent lys',
+    'gallery.item7.title': 'Fang og slipp',
+    'gallery.item7.desc': 'Bærekraftig elvefiske',
+    'gallery.item8.title': 'Trolltunga',
+    'gallery.item8.desc': 'Ikonisk utsiktspunkt',
+    'gallery.item9.title': 'Skogen',
+    'gallery.item9.desc': 'Tett granskog langs elva',
+    'gallery.item10.title': 'Villmarken',
+    'gallery.item10.desc': 'Uberørt norsk natur',
 
     'testimonials.badge': 'Gjestenes ord',
     'testimonials.heading': 'Hva våre gjester sier',
@@ -241,6 +264,29 @@ const translations = {
     'gallery.img6.alt': 'Hands gently holding a live trout over river current',
     'gallery.img7.alt': 'Dramatic Norwegian fjord landscape from Trolltunga at sunset',
     'gallery.img8.alt': 'Dark river gorge through dense spruce forest',
+    'gallery.img9.alt': 'Norwegian wilderness and river landscape',
+    'gallery.img10.alt': 'Dramatic Norwegian fjord landscape',
+
+    'gallery.item1.title': 'The Valley',
+    'gallery.item1.desc': 'Orkla seen from above',
+    'gallery.item2.title': 'The Village',
+    'gallery.item2.desc': 'Idyllic river valley',
+    'gallery.item3.title': 'The Fjord',
+    'gallery.item3.desc': 'Norwegian natural beauty',
+    'gallery.item4.title': 'The Catch',
+    'gallery.item4.desc': 'Atlantic salmon from Orkla',
+    'gallery.item5.title': 'Autumn Fishing',
+    'gallery.item5.desc': 'Golden colours by the river',
+    'gallery.item6.title': 'Sunset',
+    'gallery.item6.desc': 'Evening fishing in golden light',
+    'gallery.item7.title': 'Catch & Release',
+    'gallery.item7.desc': 'Sustainable river fishing',
+    'gallery.item8.title': 'Trolltunga',
+    'gallery.item8.desc': 'Iconic viewpoint',
+    'gallery.item9.title': 'The Forest',
+    'gallery.item9.desc': 'Dense spruce along the river',
+    'gallery.item10.title': 'The Wilderness',
+    'gallery.item10.desc': 'Untouched Norwegian nature',
 
     'testimonials.badge': 'Guest reviews',
     'testimonials.heading': 'What our guests say',
@@ -778,6 +824,51 @@ function initStatsCounter() {
   numbers.forEach(el => observer.observe(el));
 }
 
+// === GALLERY INTERACTIVE SELECTOR ===
+function initGallerySelector() {
+  const container = document.querySelector('.gallery-selector');
+  if (!container) return;
+
+  const options = container.querySelectorAll('.gallery-option');
+  if (!options.length) return;
+
+  // Click to activate
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      if (option.classList.contains('active')) return;
+      options.forEach(o => o.classList.remove('active'));
+      option.classList.add('active');
+    });
+
+    // Keyboard support
+    option.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        option.click();
+      }
+    });
+  });
+
+  // Mark container so CSS hides items for animation
+  container.classList.add('has-animation');
+
+  // Staggered entrance animation on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+
+      options.forEach((opt, i) => {
+        setTimeout(() => {
+          opt.classList.add('animated');
+        }, 150 * i);
+      });
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(container);
+}
+
 // === INIT ===
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
@@ -789,4 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBeatBookLinks();
   initBeatFromURL();
   initStatsCounter();
+
+  // Gallery selector — init independently to avoid being blocked by errors above
+  try { initGallerySelector(); } catch (e) { console.error('Gallery init error:', e); }
 });

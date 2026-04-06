@@ -58,6 +58,7 @@
     <a href="#contact" data-section="contact" data-i18n="nav.contact">Kontakt</a>
     <button class="lang-toggle mobile-lang" id="lang-toggle-mobile" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
   </nav>
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
 
 
   <!-- === HERO SECTION === -->
@@ -383,96 +384,156 @@
           <div class="divider-line"></div>
         </div>
 
-        <div class="gallery-grid" role="list">
+        <div class="gallery-selector" role="list">
 
-          <div class="gallery-item fade-in" role="listitem">
-            <img
-              src="assets/images/gallery-1.jpg"
-              data-i18n-alt="gallery.img1.alt"
-              alt="Luftfoto av elv som renner gjennom grønn norsk natur"
-              loading="lazy"
-            />
+          <!-- 1: Caught brown trout held up, mountains behind -->
+          <div class="gallery-option active" role="listitem" data-index="0" tabindex="0">
+            <img src="assets/images/gallery-1.jpg" data-i18n-alt="gallery.img1.alt" alt="Fanget brunørret holdt opp med fjell i bakgrunnen" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6"/><path d="M6.5 12c-.94 3.46-4.94 6-1 6 2.5 0 5.5-2.5 7-6"/><circle cx="4" cy="12" r="1"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item1.title">Dagens fangst</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item1.desc">Brunørret fra Orkla</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in fade-in-delay-1" role="listitem">
-            <img
-              src="assets/images/gallery-2.jpg"
-              data-i18n-alt="gallery.img2.alt"
-              alt="Norsk elvedal med grønne åser og elv gjennom landsby"
-              loading="lazy"
-            />
+          <!-- 2: Man sitting by river, fly fishing in green valley -->
+          <div class="gallery-option" role="listitem" data-index="1" tabindex="0">
+            <img src="assets/images/gallery-2.jpg" data-i18n-alt="gallery.img2.alt" alt="Fisker sitter ved elvebredden i grønn dal" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-4.97 0-9-2.24-9-5v-4c0-2.76 4.03-5 9-5s9 2.24 9 5v4c0 2.76-4.03 5-9 5z"/><path d="M12 8V2"/><path d="M8 2h8"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item2.title">Ved elva</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item2.desc">Rolig stund ved elvebredden</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in fade-in-delay-2" role="listitem">
-            <img
-              src="assets/images/gallery-10.jpg"
-              data-i18n-alt="gallery.img10.alt"
-              alt="Dramatisk norsk fjordlandskap fra Trolltunga i solnedgang"
-              loading="lazy"
-            />
+          <!-- 3: Silver salmon on grass next to fly rod -->
+          <div class="gallery-option" role="listitem" data-index="2" tabindex="0">
+            <img src="assets/images/gallery-3.jpg" data-i18n-alt="gallery.img3.alt" alt="Sølvblank laks på gresset ved siden av fluefiskestang" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6"/><path d="M6.5 12c-.94 3.46-4.94 6-1 6 2.5 0 5.5-2.5 7-6"/><circle cx="4" cy="12" r="1"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item3.title">Sølvlaksen</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item3.desc">Atlanterhavslaks og fluestang</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in" role="listitem">
-            <img
-              src="assets/images/gallery-3.jpg"
-              data-i18n-alt="gallery.img3.alt"
-              alt="Fanget atlanterhavslaks på gresset ved siden av fluefiskestang"
-              loading="lazy"
-            />
+          <!-- 4: Two people standing at river overlook, forest/mountains -->
+          <div class="gallery-option" role="listitem" data-index="3" tabindex="0">
+            <img src="assets/images/gallery-4.jpg" data-i18n-alt="gallery.img4.alt" alt="To fiskere ser utover elva i skogkledd dal" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item4.title">Utsikten</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item4.desc">Fiskekamerater ved elva</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in" role="listitem">
-            <img
-              src="assets/images/gallery-4.jpg"
-              data-i18n-alt="gallery.img4.alt"
-              alt="Fluefiskestang i mørk høstelv med fallende blader"
-              loading="lazy"
-            />
+          <!-- 5: Fishing rod silhouette at sunset -->
+          <div class="gallery-option" role="listitem" data-index="4" tabindex="0">
+            <img src="assets/images/gallery-5.jpg" data-i18n-alt="gallery.img5.alt" alt="Fiskestang i silhuett mot gyllen solnedgang" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item5.title">Solnedgang</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item5.desc">Kveldsfiske i gyllent lys</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in fade-in-delay-1" role="listitem">
-            <img
-              src="assets/images/gallery-5.jpg"
-              data-i18n-alt="gallery.img5.alt"
-              alt="Fiskestang silhuett mot gyllen solnedgang over rolig vann"
-              loading="lazy"
-            />
+          <!-- 6: Hands holding brown trout in water (catch & release) -->
+          <div class="gallery-option" role="listitem" data-index="5" tabindex="0">
+            <img src="assets/images/gallery-6.jpg" data-i18n-alt="gallery.img6.alt" alt="Hender holder forsiktig en brunørret i elvestrømmen" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11c1.5 0 3-1 3-3s-1.5-3-3-3-3 1-3 3 1.5 3 3 3z"/><path d="M14 6l3 3-3 3"/><path d="M17 9H9"/><path d="M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item6.title">Fang og slipp</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item6.desc">Varsom tilbakeslipp i elva</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in fade-in-delay-2" role="listitem">
-            <img
-              src="assets/images/gallery-6.jpg"
-              data-i18n-alt="gallery.img6.alt"
-              alt="Hender holder en levende ørret forsiktig over elvestrøm"
-              loading="lazy"
-            />
+          <!-- 7: Two people fly fishing standing in wide river -->
+          <div class="gallery-option" role="listitem" data-index="6" tabindex="0">
+            <img class="gallery-img-wide" src="assets/images/gallery-7.jpg" data-i18n-alt="gallery.img7.alt" alt="To fluefiskere står i bred elv og kaster" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item7.title">Sammen i elva</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item7.desc">Fluefiske med god selskap</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in" role="listitem">
-            <img
-              src="assets/images/gallery-7.jpg"
-              data-i18n-alt="gallery.img7.alt"
-              alt="Dramatisk norsk fjordlandskap fra Trolltunga i solnedgang"
-              loading="lazy"
-            />
+          <!-- 8: Man and boy fishing from shore, rod bent -->
+          <div class="gallery-option" role="listitem" data-index="7" tabindex="0">
+            <img src="assets/images/gallery-8.jpg" data-i18n-alt="gallery.img8.alt" alt="Mann og gutt fisker fra bredden med bøyd stang" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item8.title">Fisk på kroken</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item8.desc">Far og sønn ved vannet</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in fade-in-delay-1" role="listitem">
-            <img
-              src="assets/images/gallery-8.jpg"
-              data-i18n-alt="gallery.img8.alt"
-              alt="Mørk elvekløft gjennom tett granskog"
-              loading="lazy"
-            />
+          <!-- 9: Two people wading, one netting a fish -->
+          <div class="gallery-option" role="listitem" data-index="8" tabindex="0">
+            <img src="assets/images/gallery-9.jpg" data-i18n-alt="gallery.img9.alt" alt="To fiskere vader i elva, den ene håver inn fisk" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item9.title">Teamarbeid</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item9.desc">Håving av laks i strømmen</div>
+              </div>
+            </div>
           </div>
 
-          <div class="gallery-item fade-in" role="listitem">
-            <img
-              src="assets/images/gallery-9.jpg"
-              data-i18n-alt="gallery.img9.alt"
-              alt="Dramatisk norsk fjordlandskap fra Trolltunga i solnedgang"
-              loading="lazy"
-            />
+          <!-- 10: Single angler casting in river, green mountain valley -->
+          <div class="gallery-option" role="listitem" data-index="9" tabindex="0">
+            <img src="assets/images/gallery-10.jpg" data-i18n-alt="gallery.img10.alt" alt="Fluefisker kaster i elv omgitt av grønn fjelldal" loading="lazy" />
+            <div class="gallery-option-shadow"></div>
+            <div class="gallery-option-label">
+              <div class="gallery-option-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l4 8 5-5 5 15H2L8 3z"/></svg>
+              </div>
+              <div class="gallery-option-info">
+                <div class="gallery-option-title" data-i18n="gallery.item10.title">Kastet</div>
+                <div class="gallery-option-desc" data-i18n="gallery.item10.desc">Fluekast i fjelldalen</div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -784,6 +845,7 @@ Orkland, Trøndelag</span>
   <script src="js/animations.js"></script>
   <script src="js/booking.js"></script>
   <script src="js/modal.js"></script>
+  <script src="js/gallery.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

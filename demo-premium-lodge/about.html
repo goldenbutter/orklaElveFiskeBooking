@@ -58,6 +58,7 @@
     <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
     <button class="lang-toggle mobile-lang" id="lang-toggle-mobile" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
   </nav>
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
 
 
   <!-- === PAGE HERO === -->
@@ -77,7 +78,7 @@
         <!-- Full-width river image -->
         <img
           class="about-img-full fade-in"
-          src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1400&h=612&q=80"
+          src="assets/images/about-2.jpg"
           data-i18n-alt="about.river.img.alt"
           alt="Orklaelven i Trøndelag sett ovenfra"
           loading="eager"
@@ -93,24 +94,32 @@
 
         <p class="fade-in" data-i18n="about.history.p3">I dag drives gården av tredje generasjon, Ingrid og Tor Hagen, som viderefører familiens filosofi: færre gjester, bedre opplevelse. Elva og fisken kommer alltid først.</p>
 
-        <!-- Lodge image (2-col with text) -->
-        <div class="about-inner fade-in" style="margin-top:3rem;margin-bottom:3rem;">
-          <div class="about-text">
-            <h2 data-i18n="about.philosophy.heading">Vår filosofi</h2>
-            <div class="divider-line"></div>
-            <p data-i18n="about.philosophy.p1">Vi tror på bærekraftig sportsfiske. Alle laks under 75 cm slippes ut. Krokene er barbless på alle beats. Vi begrenser antall stenger for å bevare fiskebestandene for kommende generasjoner.</p>
-            <p data-i18n="about.philosophy.p2">Hvert opphold er designet rundt ro, natur og tradisjon — ikke teknologi og kjas. Mobildekning er svak ved elva. Det er meningen.</p>
-            <a href="booking.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;" data-i18n="hero.cta">Book ditt opphold</a>
+        <!-- Philosophy text -->
+        <h2 class="fade-in" data-i18n="about.philosophy.heading">Vår filosofi</h2>
+        <div class="divider-line fade-in"></div>
+        <p class="fade-in" data-i18n="about.philosophy.p1">Vi tror på bærekraftig sportsfiske. Alle laks under 75 cm slippes ut. Krokene er barbless på alle beats. Vi begrenser antall stenger for å bevare fiskebestandene for kommende generasjoner.</p>
+        <p class="fade-in" data-i18n="about.philosophy.p2">Hvert opphold er designet rundt ro, natur og tradisjon — ikke teknologi og kjas. Mobildekning er svak ved elva. Det er meningen.</p>
+
+        <!-- === ABOUT PHOTO GRID (monochrome → color on hover) === -->
+        <div class="about-photo-grid fade-in">
+          <div class="about-photo-item about-photo-item--tall">
+            <img src="assets/images/about2-1.jpg" alt="Laksegården sett fra elven" loading="lazy" />
           </div>
-          <div class="about-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&h=1067&q=80"
-              data-i18n-alt="gallery.img1.alt"
-              alt="Fluefisker i stri elv med tåke i bakgrunnen"
-              loading="lazy"
-            />
+          <div class="about-photo-item about-photo-item--tall">
+            <img src="assets/images/about2-2.jpg" alt="Fluefisker ved Orklaelven" loading="lazy" />
+          </div>
+          <div class="about-photo-item">
+            <img src="assets/images/about2-3.jpg" alt="Gjestehytten ved elvebredden" loading="lazy" />
+          </div>
+          <div class="about-photo-item">
+            <img src="assets/images/about2-4.jpg" alt="Fangst fra Orkla-elven" loading="lazy" />
+          </div>
+          <div class="about-photo-item about-photo-item--wide">
+            <img src="assets/images/about2-5.jpg" alt="Naturopplevelser ved laksegården" loading="lazy" />
           </div>
         </div>
+
+        <a href="booking.html" class="btn-primary btn-about-cta fade-in" data-i18n="hero.cta">Book ditt opphold</a>
 
         <!-- Guides section -->
         <h2 class="fade-in" data-i18n="about.guides.heading">Våre guider</h2>

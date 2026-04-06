@@ -59,8 +59,23 @@
   }
 
   /* Gallery */
-  .gallery-grid {
-    columns: 1;
+  .gallery-selector {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .gallery-option {
+    min-width: unset;
+    min-height: 60px;
+    flex: 0 0 60px;
+  }
+
+  .gallery-option.active {
+    flex: 0 0 280px;
+  }
+
+  .gallery-option img {
+    object-position: center 30%;
   }
 
   /* Testimonials */
@@ -71,6 +86,20 @@
   /* Contact */
   .contact-inner {
     grid-template-columns: 1fr;
+  }
+
+  /* About photo grid */
+  .about-photo-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 180px 180px;
+  }
+
+  .about-photo-item--tall {
+    grid-row: span 1;
+  }
+
+  .about-photo-item--wide {
+    grid-column: 1 / -1;
   }
 
   /* Guide grid */
@@ -159,8 +188,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .gallery-grid {
-    columns: 2;
+  .gallery-selector {
+    height: 380px;
   }
 
   .booking-panel {

@@ -10,4 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initBeatBookLinks();
   initBeatFromURL();
   initStatsCounter();
+  initGallerySelector();
+  initAboutPhotoGrid();
 });
+
+// === ABOUT PHOTO GRID — click to toggle color ===
+function initAboutPhotoGrid() {
+  const items = document.querySelectorAll('.about-photo-item');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+}
