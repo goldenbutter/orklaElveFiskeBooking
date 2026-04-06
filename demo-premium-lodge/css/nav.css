@@ -59,25 +59,9 @@
   padding-bottom: 3px;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-gold);
-  transition: width var(--transition);
-}
-
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--color-text);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
+  color: var(--color-gold);
 }
 
 .nav-right {
@@ -136,25 +120,49 @@
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* === MOBILE MENU === */
-.mobile-menu {
+/* === MOBILE MENU OVERLAY === */
+.mobile-menu-overlay {
   display: none;
   position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
+/* === MOBILE MENU — slide-in glass panel === */
+.mobile-menu {
+  position: fixed;
   top: var(--nav-height);
-  left: 0;
-  right: 0;
-  background: rgba(8, 15, 10, 0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: var(--space-md);
-  border-bottom: 1px solid var(--color-border);
+  right: 1rem;
+  width: min(240px, 65vw);
+  background: rgba(8, 15, 10, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
   z-index: 99;
+  display: flex;
   flex-direction: column;
   gap: 0;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  transform-origin: top right;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .mobile-menu.open {
-  display: flex;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
 }
 
 .mobile-menu a {
@@ -162,23 +170,22 @@
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--color-border);
-  transition: color var(--transition);
+  color: rgba(240, 236, 227, 0.75);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(240, 236, 227, 0.08);
+  transition: color var(--transition), padding-left var(--transition);
 }
 
-.mobile-menu a:last-child {
-  border-bottom: none;
-}
-
-.mobile-menu a:hover {
+.mobile-menu a:hover,
+.mobile-menu a.active {
   color: var(--color-gold);
+  padding-left: 0.5rem;
 }
 
 .mobile-lang {
-  margin-top: var(--space-sm);
+  margin-top: 0.5rem;
   align-self: flex-start;
+  width: auto;
 }
 
 /* === STICKY BOOKING BAR === */
