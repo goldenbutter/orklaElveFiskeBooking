@@ -91,6 +91,10 @@ Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
   <img src="demo-premium-lodge/assets/videos/dashboard.gif" width="100%" alt="Owner dashboard preview" />
 </div>
 
+<div align="center">
+  <img src="demo-premium-lodge/assets/videos/gallery_pc.gif" width="100%" alt="Gallery preview" />
+</div>
+
 
 ---
 
