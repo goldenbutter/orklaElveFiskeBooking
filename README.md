@@ -23,6 +23,7 @@ orklaElveFiskeBooking/
 │   ├── index.html
 │   ├── booking.html
 │   ├── about.html
+│   ├── dashboard.html               # Owner-only dashboard (admin gated)
 │   ├── 404.html
 │   ├── favicon.svg                  # Gold fish hook (Vercel project icon)
 │   ├── css/
@@ -33,6 +34,8 @@ orklaElveFiskeBooking/
 │   │   ├── sections.css             # All content sections + footer
 │   │   ├── booking.css              # Booking form + stepper
 │   │   ├── modal.css                # Vipps demo modal
+│   │   ├── auth.css                 # Login/register modal
+│   │   ├── dashboard.css            # Owner dashboard layout + charts
 │   │   └── responsive.css           # Media queries
 │   ├── js/
 │   │   ├── app.js                   # Init entry point
@@ -41,7 +44,11 @@ orklaElveFiskeBooking/
 │   │   ├── nav.js                   # Navigation + hamburger
 │   │   ├── animations.js            # Scroll animations + stats counter
 │   │   ├── booking.js               # Beat data, pricing, booking logic
-│   │   └── modal.js                 # Vipps demo modal
+│   │   ├── modal.js                 # Vipps demo modal + checkout gate
+│   │   ├── auth.js                  # Simulated auth (customer + admin roles)
+│   │   ├── data-store.js            # Async data layer (Supabase-ready)
+│   │   ├── mock-data.js             # 40 demo bookings
+│   │   └── dashboard.js             # KPIs + SVG charts + bookings table
 │   └── assets/
 │       ├── images/                  # 11 local jpg files
 │       └── videos/                  # Hero video (mp4) + preview gifs
@@ -70,13 +77,18 @@ orklaElveFiskeBooking/
 Dark, premium aesthetic targeting high-end salmon fishing lodge clients.
 
 - 👉 **Live:** [demo-premium-lodge.ibithun.com](https://demo-premium-lodge.ibithun.com)
-- **Pages:** Home, About, Booking
+- **Pages:** Home, About, Booking, Dashboard (owner-only)
 - **Tone:** Luxury, sleek, exclusive
-- **Features:** Beat selector, live price calculator, Vipps demo modal, NO/EN language toggle
+- **Features:** Beat selector, live price calculator, Vipps demo modal, NO/EN language toggle, customer login/registration, owner dashboard with KPIs and SVG charts
+- **Demo owner login:** `owner` / `lodge2026`
 
 
 <div align="center">
   <video src="https://github.com/user-attachments/assets/bd61a198-016f-42d8-a160-78083fc41a17" width="100%" controls autoplay loop muted></video>
+</div>
+
+<div align="center">
+  <img src="demo-premium-lodge/assets/videos/dashboard.gif" width="100%" alt="Owner dashboard preview" />
 </div>
 
 

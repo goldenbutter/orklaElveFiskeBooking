@@ -36,7 +36,10 @@ function applyLanguage(lang) {
   localStorage.setItem('lang', lang);
 
   // Re-render booking output if active
-  updateBookingDisplay();
+  if (typeof updateBookingDisplay === 'function') updateBookingDisplay();
+
+  // Notify other modules (dashboard, auth nav) that the language changed
+  window.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
 }
 
 function initLanguage() {

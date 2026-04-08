@@ -11,3 +11,10 @@ screenshot/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
