@@ -1,29 +1,49 @@
 // === VIPPS MODAL ===
+function openVippsModal() {
+  const overlay = document.getElementById('vipps-modal');
+  if (!overlay) return;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVippsModal() {
+  const overlay = document.getElementById('vipps-modal');
+  if (!overlay) return;
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 function initModal() {
   const overlay = document.getElementById('vipps-modal');
   const closeBtn = document.getElementById('modal-close');
-  const vippsBtn = document.getElementById('vipps-btn');
-
   if (!overlay) return;
 
-  function openModal() {
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  if (vippsBtn) vippsBtn.addEventListener('click', openModal);
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeVippsModal);
 
   overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeModal();
+    if (e.target === overlay) closeVippsModal();
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeVippsModal();
+  });
+}
+
+// === CHECKOUT GATE ===
+// Vipps button requires the visitor to be logged in (or registered).
+// If logged out, opens the auth modal first; on success continues to Vipps.
+function initBookingCheckoutGate() {
+  const vippsBtn = document.getElementById('vipps-btn');
+  if (!vippsBtn || typeof Auth === 'undefined') return;
+
+  vippsBtn.addEventListener('click', () => {
+    const user = Auth.getUser();
+    if (user) {
+      openVippsModal();
+    } else {
+      Auth.openAuthModal('login', () => {
+        openVippsModal();
+      });
+    }
   });
 }

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Orkla Laksegård</title>
+  <meta name="description" content="Eier-dashboard for Orkla Laksegård. Sanntidsoversikt over salg, bookinger og betalingsstatus." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Admin gate runs BEFORE rendering: redirect non-admins immediately.
+       Self-contained: reads localStorage directly so no scripts are needed yet. -->
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem('currentUser');
+        var user = raw ? JSON.parse(raw) : null;
+        if (!user || user.role !== 'admin') {
+          window.location.replace('index.html');
+        }
+      } catch (e) {
+        window.location.replace('index.html');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- === NAVIGATION === -->
+  <nav class="nav scrolled" role="navigation" aria-label="Hovednavigasjon">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" data-i18n="nav.logo">Orkla Laksegård</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="about.html" data-i18n="nav.about">Om oss</a></li>
+        <li><a href="index.html#beats" data-i18n="nav.beats">Beats</a></li>
+        <li><a href="booking.html" data-i18n="nav.booking">Booking</a></li>
+        <li><a href="index.html#gallery" data-i18n="nav.gallery">Galleri</a></li>
+        <li><a href="index.html#contact" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div id="auth-nav-slot"></div>
+        <button class="lang-toggle" id="lang-toggle" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Åpne meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobilnavigasjon">
+    <a href="about.html" data-i18n="nav.about">Om oss</a>
+    <a href="index.html#beats" data-i18n="nav.beats">Beats</a>
+    <a href="booking.html" data-i18n="nav.booking">Booking</a>
+    <a href="index.html#gallery" data-i18n="nav.gallery">Galleri</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
+    <div id="auth-nav-slot-mobile"></div>
+    <button class="lang-toggle mobile-lang" id="lang-toggle-mobile" aria-label="Bytt språk" data-i18n="nav.lang">EN</button>
+  </nav>
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+
+  <!-- === DASHBOARD === -->
+  <main class="dashboard-page">
+
+    <header class="dashboard-topbar">
+      <div class="dashboard-title-block">
+        <span class="dashboard-eyebrow" data-i18n="dashboard.eyebrow">Eier-dashboard</span>
+        <h1 class="dashboard-h1" data-i18n="dashboard.title">Oversikt</h1>
+        <p class="dashboard-greeting">
+          <span data-i18n="dashboard.greeting">Velkommen tilbake,</span>
+          <strong id="dashboard-owner-name">Tor</strong>
+        </p>
+      </div>
+    </header>
+
+    <div class="dashboard-demo-banner">
+      <strong data-i18n="dashboard.demoTag">Demo</strong>
+      <span data-i18n="dashboard.demoBanner">Dette er demodata — ingen ekte bookinger. Tilgang: owner / lodge2026</span>
+    </div>
+
+    <!-- KPI strip -->
+    <section class="dashboard-kpis" aria-label="Nøkkeltall">
+      <div class="kpi-card">
+        <div class="kpi-label" data-i18n="dashboard.kpi.sales">Totalt salg</div>
+        <div class="kpi-value" id="kpi-sales">—</div>
+        <div class="kpi-sub" data-i18n="dashboard.kpi.salesSub">denne sesongen</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label" data-i18n="dashboard.kpi.bookings">Bookinger</div>
+        <div class="kpi-value" id="kpi-bookings">—</div>
+        <div class="kpi-sub" id="kpi-bookings-sub">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label" data-i18n="dashboard.kpi.revenue">Omsetning</div>
+        <div class="kpi-value" id="kpi-revenue">—</div>
+        <div class="kpi-sub" data-i18n="dashboard.kpi.revenueSub">brutto, alle beats</div>
+      </div>
+      <div class="kpi-card kpi-advance">
+        <div class="kpi-label" data-i18n="dashboard.kpi.advance">Forskuddsbetalt</div>
+        <div class="kpi-value" id="kpi-advance">—</div>
+        <div class="kpi-sub" id="kpi-advance-sub">—</div>
+      </div>
+      <div class="kpi-card kpi-unpaid">
+        <div class="kpi-label" data-i18n="dashboard.kpi.unpaid">Ubetalt</div>
+        <div class="kpi-value" id="kpi-unpaid">—</div>
+        <div class="kpi-sub" id="kpi-unpaid-sub">—</div>
+      </div>
+    </section>
+
+    <!-- Charts row 1 -->
+    <section class="dashboard-charts-row" aria-label="Diagrammer">
+      <div class="chart-card">
+        <div class="chart-title" data-i18n="dashboard.chart.monthly">Månedlig omsetning</div>
+        <svg id="chart-revenue" class="chart-svg" viewBox="0 0 600 280" aria-label="Månedlig omsetning"></svg>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title" data-i18n="dashboard.chart.beats">Bookinger per fiskeplass</div>
+        <div class="donut-wrap">
+          <svg id="chart-donut" class="chart-svg" viewBox="0 0 200 200" aria-label="Bookinger per fiskeplass"></svg>
+          <div id="donut-legend" class="donut-legend"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts row 2 — payment status -->
+    <section class="chart-card" aria-label="Betalingsstatus" style="margin-bottom: var(--space-md);">
+      <div class="chart-title" data-i18n="dashboard.chart.status">Betalingsstatus</div>
+      <div class="status-bar-wrap">
+        <div class="status-bar-track" id="status-bar-track" role="img" aria-label="Betalingsstatus fordeling"></div>
+        <div class="status-bar-legend" id="status-bar-legend"></div>
+      </div>
+    </section>
+
+    <!-- Recent bookings table -->
+    <section class="bookings-table-card" aria-label="Siste bookinger">
+      <div class="bookings-table-header">
+        <div class="bookings-table-title" data-i18n="dashboard.table.title">Siste bookinger</div>
+        <input
+          type="text"
+          id="bookings-search"
+          class="bookings-search"
+          data-i18n-placeholder="dashboard.searchPlaceholder"
+          placeholder="Søk etter kunde..."
+          aria-label="Søk etter kunde"
+        />
+      </div>
+      <div class="bookings-table-scroll">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th data-sort="customerName"><span data-i18n="dashboard.table.customer">Kunde</span><span class="sort-arrow">↕</span></th>
+              <th data-sort="beat"><span data-i18n="dashboard.table.beat">Fiskeplass</span><span class="sort-arrow">↕</span></th>
+              <th data-sort="arrival"><span data-i18n="dashboard.table.arrival">Ankomst</span><span class="sort-arrow">↕</span></th>
+              <th data-sort="departure"><span data-i18n="dashboard.table.departure">Avreise</span><span class="sort-arrow">↕</span></th>
+              <th data-sort="rods"><span data-i18n="dashboard.table.rods">Stenger</span><span class="sort-arrow">↕</span></th>
+              <th data-sort="total" class="col-amount"><span data-i18n="dashboard.table.amount">Beløp</span><span class="sort-arrow">↕</span></th>
+              <th data-sort="status"><span data-i18n="dashboard.table.status">Status</span><span class="sort-arrow">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="bookings-tbody"></tbody>
+        </table>
+        <p id="bookings-empty" class="bookings-empty" hidden data-i18n="dashboard.table.empty">Ingen bookinger funnet</p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- === FOOTER === -->
+  <footer class="footer" role="contentinfo">
+    <p class="footer-copyright" data-i18n="footer.copyright">© 2026 Orkla Laksegård. Alle rettigheter reservert.</p>
+    <p class="footer-dev">
+      <span data-i18n="footer.dev">Utviklet av</span> <a href="#" rel="noopener">Bithun</a>
+    </p>
+  </footer>
+
+
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/data-store.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

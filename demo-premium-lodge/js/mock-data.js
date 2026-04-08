@@ -1,0 +1,56 @@
+// === MOCK BOOKINGS DATASET ===
+// 40 demo bookings spanning the 2026 season (May 15 – Sep 15).
+// Status mix: ~55% paid, ~30% advance only, ~15% unpaid.
+// Rates match the seasonal pricing in booking.js so totals stay consistent.
+
+const MOCK_BOOKINGS = [
+  // === MAY (early season — 750 kr) ===
+  { id: 'BK-1001', customerName: 'Ola Nordmann',     customerEmail: 'ola.nordmann@example.no',     beat: 'ovre-elv',     arrival: '2026-05-16', departure: '2026-05-19', rods: 2, total: 4500,  deposit: 1350,  remaining: 3150,  status: 'paid',    bookedAt: '2026-02-14' },
+  { id: 'BK-1002', customerName: 'Kari Berg',        customerEmail: 'kari.berg@example.no',        beat: 'nedre-poll',   arrival: '2026-05-18', departure: '2026-05-22', rods: 3, total: 9000,  deposit: 2700,  remaining: 6300,  status: 'advance', bookedAt: '2026-02-20' },
+  { id: 'BK-1003', customerName: 'Lars Hansen',      customerEmail: 'lars.hansen@example.no',      beat: 'midtre-stryk', arrival: '2026-05-20', departure: '2026-05-23', rods: 1, total: 2250,  deposit: 675,   remaining: 1575,  status: 'paid',    bookedAt: '2026-03-01' },
+  { id: 'BK-1004', customerName: 'Ingrid Solberg',   customerEmail: 'ingrid.s@example.no',         beat: 'ovre-elv',     arrival: '2026-05-23', departure: '2026-05-27', rods: 2, total: 6000,  deposit: 1800,  remaining: 4200,  status: 'paid',    bookedAt: '2026-03-04' },
+  { id: 'BK-1005', customerName: 'Erik Thorvaldsen', customerEmail: 'erik.t@example.no',           beat: 'nedre-poll',   arrival: '2026-05-26', departure: '2026-05-30', rods: 4, total: 12000, deposit: 3600,  remaining: 8400,  status: 'unpaid',  bookedAt: '2026-03-08' },
+
+  // === JUNE (peak — 950 kr) ===
+  { id: 'BK-1006', customerName: 'Marit Olsen',      customerEmail: 'marit.olsen@example.no',      beat: 'ovre-elv',     arrival: '2026-06-02', departure: '2026-06-06', rods: 3, total: 11400, deposit: 3420,  remaining: 7980,  status: 'paid',    bookedAt: '2026-01-12' },
+  { id: 'BK-1007', customerName: 'Hans-Erik Paulsen',customerEmail: 'hep@example.no',              beat: 'midtre-stryk', arrival: '2026-06-04', departure: '2026-06-08', rods: 2, total: 7600,  deposit: 2280,  remaining: 5320,  status: 'paid',    bookedAt: '2026-01-18' },
+  { id: 'BK-1008', customerName: 'Bjørn Aas',        customerEmail: 'bjorn.aas@example.no',        beat: 'nedre-poll',   arrival: '2026-06-07', departure: '2026-06-11', rods: 4, total: 15200, deposit: 4560,  remaining: 10640, status: 'advance', bookedAt: '2026-02-02' },
+  { id: 'BK-1009', customerName: 'Tor Hagen',        customerEmail: 'tor.hagen@example.no',        beat: 'ovre-elv',     arrival: '2026-06-10', departure: '2026-06-14', rods: 3, total: 11400, deposit: 3420,  remaining: 7980,  status: 'paid',    bookedAt: '2026-02-10' },
+  { id: 'BK-1010', customerName: 'Siri Bakken',      customerEmail: 'siri.b@example.no',           beat: 'midtre-stryk', arrival: '2026-06-12', departure: '2026-06-15', rods: 2, total: 5700,  deposit: 1710,  remaining: 3990,  status: 'paid',    bookedAt: '2026-02-15' },
+  { id: 'BK-1011', customerName: 'Olav Strand',      customerEmail: 'olav.s@example.no',           beat: 'nedre-poll',   arrival: '2026-06-15', departure: '2026-06-19', rods: 3, total: 11400, deposit: 3420,  remaining: 7980,  status: 'advance', bookedAt: '2026-02-22' },
+  { id: 'BK-1012', customerName: 'Anne Lien',        customerEmail: 'anne.lien@example.no',        beat: 'ovre-elv',     arrival: '2026-06-18', departure: '2026-06-22', rods: 2, total: 7600,  deposit: 2280,  remaining: 5320,  status: 'paid',    bookedAt: '2026-03-01' },
+  { id: 'BK-1013', customerName: 'Per Eriksen',      customerEmail: 'per.e@example.no',            beat: 'midtre-stryk', arrival: '2026-06-21', departure: '2026-06-24', rods: 2, total: 5700,  deposit: 1710,  remaining: 3990,  status: 'unpaid',  bookedAt: '2026-03-05' },
+  { id: 'BK-1014', customerName: 'Astrid Moen',      customerEmail: 'astrid.m@example.no',         beat: 'nedre-poll',   arrival: '2026-06-23', departure: '2026-06-28', rods: 4, total: 19000, deposit: 5700,  remaining: 13300, status: 'paid',    bookedAt: '2026-03-10' },
+  { id: 'BK-1015', customerName: 'Trond Nilsen',     customerEmail: 'trond.n@example.no',          beat: 'ovre-elv',     arrival: '2026-06-26', departure: '2026-06-30', rods: 3, total: 11400, deposit: 3420,  remaining: 7980,  status: 'advance', bookedAt: '2026-03-12' },
+  { id: 'BK-1016', customerName: 'Liv Sundby',       customerEmail: 'liv.sundby@example.no',       beat: 'midtre-stryk', arrival: '2026-06-29', departure: '2026-07-02', rods: 1, total: 2850,  deposit: 855,   remaining: 1995,  status: 'paid',    bookedAt: '2026-03-15' },
+
+  // === JULY (peak Jul 1–15 = 950, mid Jul 16–31 = 850) ===
+  { id: 'BK-1017', customerName: 'Morten Vik',       customerEmail: 'morten.vik@example.no',       beat: 'nedre-poll',   arrival: '2026-07-02', departure: '2026-07-06', rods: 4, total: 15200, deposit: 4560,  remaining: 10640, status: 'paid',    bookedAt: '2026-01-20' },
+  { id: 'BK-1018', customerName: 'Eva Lund',         customerEmail: 'eva.lund@example.no',         beat: 'ovre-elv',     arrival: '2026-07-04', departure: '2026-07-08', rods: 2, total: 7600,  deposit: 2280,  remaining: 5320,  status: 'paid',    bookedAt: '2026-01-25' },
+  { id: 'BK-1019', customerName: 'Geir Holm',        customerEmail: 'geir.holm@example.no',        beat: 'midtre-stryk', arrival: '2026-07-07', departure: '2026-07-10', rods: 2, total: 5700,  deposit: 1710,  remaining: 3990,  status: 'advance', bookedAt: '2026-02-01' },
+  { id: 'BK-1020', customerName: 'Ragnhild Dahl',    customerEmail: 'ragnhild.d@example.no',       beat: 'nedre-poll',   arrival: '2026-07-10', departure: '2026-07-14', rods: 3, total: 11400, deposit: 3420,  remaining: 7980,  status: 'paid',    bookedAt: '2026-02-05' },
+  { id: 'BK-1021', customerName: 'Kjell Bø',         customerEmail: 'kjell.bo@example.no',         beat: 'ovre-elv',     arrival: '2026-07-13', departure: '2026-07-17', rods: 3, total: 10800, deposit: 3240,  remaining: 7560,  status: 'unpaid',  bookedAt: '2026-02-08' },
+  { id: 'BK-1022', customerName: 'Hilde Sætre',      customerEmail: 'hilde.s@example.no',          beat: 'midtre-stryk', arrival: '2026-07-16', departure: '2026-07-20', rods: 2, total: 6800,  deposit: 2040,  remaining: 4760,  status: 'paid',    bookedAt: '2026-02-12' },
+  { id: 'BK-1023', customerName: 'Stein Brekke',     customerEmail: 'stein.b@example.no',          beat: 'nedre-poll',   arrival: '2026-07-19', departure: '2026-07-23', rods: 4, total: 13600, deposit: 4080,  remaining: 9520,  status: 'paid',    bookedAt: '2026-02-18' },
+  { id: 'BK-1024', customerName: 'Tone Wik',         customerEmail: 'tone.wik@example.no',         beat: 'ovre-elv',     arrival: '2026-07-22', departure: '2026-07-25', rods: 2, total: 5100,  deposit: 1530,  remaining: 3570,  status: 'advance', bookedAt: '2026-02-25' },
+  { id: 'BK-1025', customerName: 'Knut Lier',        customerEmail: 'knut.lier@example.no',        beat: 'midtre-stryk', arrival: '2026-07-25', departure: '2026-07-28', rods: 1, total: 2550,  deposit: 765,   remaining: 1785,  status: 'paid',    bookedAt: '2026-03-02' },
+  { id: 'BK-1026', customerName: 'Mette Foss',       customerEmail: 'mette.f@example.no',          beat: 'nedre-poll',   arrival: '2026-07-28', departure: '2026-08-01', rods: 3, total: 10200, deposit: 3060,  remaining: 7140,  status: 'paid',    bookedAt: '2026-03-06' },
+
+  // === AUGUST (mid — 850 kr) ===
+  { id: 'BK-1027', customerName: 'Arne Fjell',       customerEmail: 'arne.fjell@example.no',       beat: 'ovre-elv',     arrival: '2026-08-02', departure: '2026-08-06', rods: 3, total: 10200, deposit: 3060,  remaining: 7140,  status: 'paid',    bookedAt: '2026-01-30' },
+  { id: 'BK-1028', customerName: 'Solveig Berg',     customerEmail: 'solveig.b@example.no',        beat: 'midtre-stryk', arrival: '2026-08-05', departure: '2026-08-09', rods: 2, total: 6800,  deposit: 2040,  remaining: 4760,  status: 'advance', bookedAt: '2026-02-07' },
+  { id: 'BK-1029', customerName: 'Rolf Stensen',     customerEmail: 'rolf.s@example.no',           beat: 'nedre-poll',   arrival: '2026-08-08', departure: '2026-08-12', rods: 4, total: 13600, deposit: 4080,  remaining: 9520,  status: 'paid',    bookedAt: '2026-02-14' },
+  { id: 'BK-1030', customerName: 'Berit Hauge',      customerEmail: 'berit.h@example.no',          beat: 'ovre-elv',     arrival: '2026-08-11', departure: '2026-08-15', rods: 2, total: 6800,  deposit: 2040,  remaining: 4760,  status: 'paid',    bookedAt: '2026-02-20' },
+  { id: 'BK-1031', customerName: 'Frode Næss',       customerEmail: 'frode.n@example.no',          beat: 'midtre-stryk', arrival: '2026-08-14', departure: '2026-08-18', rods: 2, total: 6800,  deposit: 2040,  remaining: 4760,  status: 'unpaid',  bookedAt: '2026-02-25' },
+  { id: 'BK-1032', customerName: 'Camilla Roe',      customerEmail: 'camilla.r@example.no',        beat: 'nedre-poll',   arrival: '2026-08-17', departure: '2026-08-21', rods: 3, total: 10200, deposit: 3060,  remaining: 7140,  status: 'advance', bookedAt: '2026-03-01' },
+  { id: 'BK-1033', customerName: 'Jan Eide',         customerEmail: 'jan.eide@example.no',         beat: 'ovre-elv',     arrival: '2026-08-20', departure: '2026-08-24', rods: 3, total: 10200, deposit: 3060,  remaining: 7140,  status: 'paid',    bookedAt: '2026-03-08' },
+  { id: 'BK-1034', customerName: 'Wenche Aune',      customerEmail: 'wenche.a@example.no',         beat: 'midtre-stryk', arrival: '2026-08-23', departure: '2026-08-27', rods: 1, total: 3400,  deposit: 1020,  remaining: 2380,  status: 'paid',    bookedAt: '2026-03-12' },
+  { id: 'BK-1035', customerName: 'Øystein Lyng',     customerEmail: 'oystein.l@example.no',        beat: 'nedre-poll',   arrival: '2026-08-26', departure: '2026-08-30', rods: 4, total: 13600, deposit: 4080,  remaining: 9520,  status: 'advance', bookedAt: '2026-03-15' },
+
+  // === SEPTEMBER (late — 650 kr) ===
+  { id: 'BK-1036', customerName: 'Linda Storm',      customerEmail: 'linda.storm@example.no',      beat: 'ovre-elv',     arrival: '2026-09-02', departure: '2026-09-06', rods: 2, total: 5200,  deposit: 1560,  remaining: 3640,  status: 'paid',    bookedAt: '2026-04-01' },
+  { id: 'BK-1037', customerName: 'Vidar Holt',       customerEmail: 'vidar.holt@example.no',       beat: 'midtre-stryk', arrival: '2026-09-04', departure: '2026-09-08', rods: 2, total: 5200,  deposit: 1560,  remaining: 3640,  status: 'paid',    bookedAt: '2026-04-02' },
+  { id: 'BK-1038', customerName: 'Synnøve Mo',       customerEmail: 'synnove.mo@example.no',       beat: 'nedre-poll',   arrival: '2026-09-07', departure: '2026-09-11', rods: 3, total: 7800,  deposit: 2340,  remaining: 5460,  status: 'unpaid',  bookedAt: '2026-04-03' },
+  { id: 'BK-1039', customerName: 'Espen Haug',       customerEmail: 'espen.h@example.no',          beat: 'ovre-elv',     arrival: '2026-09-09', departure: '2026-09-13', rods: 3, total: 7800,  deposit: 2340,  remaining: 5460,  status: 'paid',    bookedAt: '2026-04-05' },
+  { id: 'BK-1040', customerName: 'Gro Tangen',       customerEmail: 'gro.tangen@example.no',       beat: 'nedre-poll',   arrival: '2026-09-11', departure: '2026-09-15', rods: 4, total: 10400, deposit: 3120,  remaining: 7280,  status: 'advance', bookedAt: '2026-04-06' }
+];
