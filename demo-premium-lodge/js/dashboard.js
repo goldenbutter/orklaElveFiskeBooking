@@ -23,6 +23,9 @@ const MONTH_LABELS = {
 let dashboardBookings = [];
 let dashboardSort = { key: 'arrival', dir: 'desc' };
 let dashboardSearch = '';
+// Active chart filter — clicked from a bar / donut segment / status segment.
+// type: 'month' | 'beat' | 'status' | null
+let dashboardFilter = { type: null, value: null, label: null };
 
 function fmtNOK(n) {
   return Math.round(n).toLocaleString('nb-NO') + ' kr';
@@ -123,6 +126,7 @@ function renderRevenueBars(bookings) {
   }
 
   // Bars
+  const t = translations[currentLang];
   monthRevenue.forEach((val, i) => {
     const x = padL + slot * i + (slot - barW) / 2;
     const h = niceMax > 0 ? (val / niceMax) * innerH : 0;
@@ -135,10 +139,16 @@ function renderRevenueBars(bookings) {
     rect.setAttribute('height', h);
     rect.setAttribute('rx', 2);
     rect.setAttribute('class', 'bar-chart-bar');
+    rect.dataset.monthIndex = String(i + 4);
 
     const title = document.createElementNS(ns, 'title');
     title.textContent = `${labels[i]}: ${fmtNOK(val)}`;
     rect.appendChild(title);
+
+    rect.addEventListener('click', () => {
+      const chartTitle = t['dashboard.chart.monthly'] || 'Måned';
+      setDashboardFilter('month', i + 4, `${chartTitle}: ${labels[i]}`);
+    });
 
     svg.appendChild(rect);
 
@@ -215,10 +225,15 @@ function renderBeatDonut(bookings) {
     path.setAttribute('d', d);
     path.setAttribute('fill', BEAT_COLORS[beat]);
     path.setAttribute('class', 'donut-segment');
+    path.dataset.beat = beat;
 
     const title = document.createElementNS(ns, 'title');
     title.textContent = `${BEAT_LABELS[beat][currentLang]}: ${count}`;
     path.appendChild(title);
+
+    path.addEventListener('click', () => {
+      setDashboardFilter('beat', beat, BEAT_LABELS[beat][currentLang]);
+    });
 
     svg.appendChild(path);
     startAngle = endAngle;
@@ -276,6 +291,10 @@ function renderStatusBar(bookings) {
     div.style.width = pct + '%';
     div.textContent = pct >= 8 ? Math.round(pct) + '%' : '';
     div.title = `${seg.label}: ${seg.count} (${Math.round(pct)}%)`;
+    div.dataset.status = seg.key;
+    div.addEventListener('click', () => {
+      setDashboardFilter('status', seg.key, seg.label);
+    });
     track.appendChild(div);
   });
 
@@ -303,6 +322,16 @@ function renderTable() {
   const q = dashboardSearch.trim().toLowerCase();
 
   let rows = dashboardBookings.slice();
+
+  // Chart-driven filter (clicked bar / donut segment / status segment)
+  if (dashboardFilter.type === 'month') {
+    rows = rows.filter(b => new Date(b.arrival + 'T12:00:00').getMonth() === dashboardFilter.value);
+  } else if (dashboardFilter.type === 'beat') {
+    rows = rows.filter(b => b.beat === dashboardFilter.value);
+  } else if (dashboardFilter.type === 'status') {
+    rows = rows.filter(b => b.status === dashboardFilter.value);
+  }
+
   if (q) {
     rows = rows.filter(b =>
       b.customerName.toLowerCase().includes(q) ||
@@ -367,6 +396,80 @@ function escapeHTML(s) {
   }[c]));
 }
 
+// === Filter helpers (chart click → table filter) ===
+function setDashboardFilter(type, value, label) {
+  // Clicking the active filter again clears it (toggle off)
+  if (dashboardFilter.type === type && dashboardFilter.value === value) {
+    dashboardFilter = { type: null, value: null, label: null };
+  } else {
+    dashboardFilter = { type, value, label };
+  }
+  applyChartHighlights();
+  renderFilterChip();
+  renderTable();
+  // Smoothly bring the table into view so the result of the click is visible
+  const tableCard = document.querySelector('.bookings-table-card');
+  if (tableCard) tableCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function clearDashboardFilter() {
+  dashboardFilter = { type: null, value: null, label: null };
+  applyChartHighlights();
+  renderFilterChip();
+  renderTable();
+}
+
+function applyChartHighlights() {
+  // Bar chart
+  document.querySelectorAll('.bar-chart-bar').forEach(el => {
+    el.classList.remove('selected', 'dimmed');
+    if (dashboardFilter.type === 'month') {
+      if (parseInt(el.dataset.monthIndex, 10) === dashboardFilter.value) el.classList.add('selected');
+      else el.classList.add('dimmed');
+    }
+  });
+  // Donut
+  document.querySelectorAll('.donut-segment').forEach(el => {
+    el.classList.remove('selected', 'dimmed');
+    if (dashboardFilter.type === 'beat') {
+      if (el.dataset.beat === dashboardFilter.value) el.classList.add('selected');
+      else el.classList.add('dimmed');
+    }
+  });
+  // Status bar
+  document.querySelectorAll('.status-bar-segment').forEach(el => {
+    el.classList.remove('selected', 'dimmed');
+    if (dashboardFilter.type === 'status') {
+      if (el.dataset.status === dashboardFilter.value) el.classList.add('selected');
+      else el.classList.add('dimmed');
+    }
+  });
+}
+
+function renderFilterChip() {
+  const header = document.querySelector('.bookings-table-header');
+  if (!header) return;
+  let chip = header.querySelector('.dashboard-filter-chip');
+
+  if (!dashboardFilter.type) {
+    if (chip) chip.remove();
+    return;
+  }
+
+  if (!chip) {
+    chip = document.createElement('div');
+    chip.className = 'dashboard-filter-chip';
+    const search = header.querySelector('.bookings-search');
+    if (search) header.insertBefore(chip, search);
+    else header.appendChild(chip);
+  }
+  chip.innerHTML = `
+    <span class="dashboard-filter-chip-label">${escapeHTML(dashboardFilter.label || '')}</span>
+    <button type="button" class="dashboard-filter-chip-clear" aria-label="Fjern filter">×</button>
+  `;
+  chip.querySelector('.dashboard-filter-chip-clear').addEventListener('click', clearDashboardFilter);
+}
+
 // === Re-render everything (used on lang change) ===
 function renderDashboardAll() {
   if (!dashboardBookings.length) return;
@@ -376,6 +479,9 @@ function renderDashboardAll() {
   renderBeatDonut(dashboardBookings);
   renderStatusBar(dashboardBookings);
   renderTable();
+  // Re-apply selection state after charts are rebuilt from scratch
+  applyChartHighlights();
+  renderFilterChip();
 }
 
 // === INIT ===
