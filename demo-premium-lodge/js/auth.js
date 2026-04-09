@@ -121,9 +121,12 @@ const Auth = (function () {
           link.className = 'mobile-dashboard-link';
           link.setAttribute('data-i18n', 'nav.dashboard');
           link.textContent = txt('nav.dashboard', 'Dashboard');
-          // Insert before the language toggle if present
+          // Insert right after the static nav links, before the auth slot.
+          // Falls back to before the language toggle, then append.
+          const authSlot = menu.querySelector('#auth-nav-slot-mobile');
           const langBtn = menu.querySelector('.mobile-lang');
-          if (langBtn) menu.insertBefore(link, langBtn);
+          if (authSlot) menu.insertBefore(link, authSlot);
+          else if (langBtn) menu.insertBefore(link, langBtn);
           else menu.appendChild(link);
         }
       } else if (existing) {
